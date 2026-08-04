@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>דוח קידום אורגני - אולסי מערכות - יולי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #C2185B;
+    --brand-deep: #6b0d32;
+    --accent: #F86080;
+    --prev: #b9b7ae;
+    --good: #0a7d29;
+    --bad: #c0392b;
+    --muted: #8a8880;
+    --ink: #14161c;
+    --ink-2: #4b5060;
+    --surface: #ffffff;
+    --plane: #f6f7f9;
+    --grid: #e7e8ec;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--plane); color: var(--ink);
+    font-family: Heebo, "Segoe UI", Arial, sans-serif;
+    font-size: 15px; line-height: 1.6; -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { max-width: 1000px; margin: 0 auto; padding: 0 28px 64px; }
+
+  /* ---------- cover ---------- */
+  .cover {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+    color: #fff; padding: 56px 0 44px; margin-bottom: 34px;
+  }
+  .cover-in { max-width: 1000px; margin: 0 auto; padding: 0 28px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
+  .cover h1 { font-size: 34px; font-weight: 800; margin: 0 0 6px; letter-spacing: -.5px; }
+  .cover .sub { font-size: 17px; opacity: .82; font-weight: 300; }
+  .cover .meta { margin-top: 22px; font-size: 14px; opacity: .78; }
+  .cover .meta b { font-weight: 500; }
+  .cover-side { display: flex; flex-direction: column; align-items: stretch;
+    gap: 10px; flex: 0 0 auto; }
+  .dl {
+    display: block; text-align: center; text-decoration: none;
+    background: var(--accent); color: #14161c; font-weight: 700; font-size: 13px;
+    padding: 9px 14px; border-radius: 9px;
+  }
+  .dl:hover { filter: brightness(1.08); }
+  .logo-box {
+    background: #fff; border-radius: 14px; padding: 16px 20px;
+    display: flex; align-items: center; min-height: 78px; flex: 0 0 auto;
+  }
+  .logo-box img { max-height: 62px; max-width: 210px; display: block; }
+  .wordmark { color: var(--brand); font-weight: 800; font-size: 22px; }
+  .rule { height: 4px; background: var(--accent); }
+
+  /* ---------- structure ---------- */
+  section { margin: 0 0 40px; }
+  h2 {
+    font-size: 21px; font-weight: 700; margin: 0 0 4px;
+    padding-right: 14px; border-right: 4px solid var(--accent);
+  }
+  .lead { color: var(--ink-2); font-size: 14px; margin: 0 0 18px; padding-right: 18px; }
+  h3 { font-size: 15px; font-weight: 700; margin: 0 0 14px; color: var(--ink); }
+  .card {
+    background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 16px;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-2 > .card { margin-bottom: 0; }
+  .grid-2 + .grid-2 { margin-top: 16px; }
+
+  /* ---------- tiles ---------- */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
+    padding: 18px 18px 16px; position: relative; overflow: hidden;
+  }
+  .tile::before {
+    content: ""; position: absolute; inset-inline-start: 0; top: 0; bottom: 0;
+    width: 4px; background: var(--tile-accent, var(--brand));
+  }
+  .tile-label { font-size: 13px; color: var(--ink-2); font-weight: 500; }
+  .tile-value { font-size: 34px; font-weight: 800; line-height: 1.15; margin: 4px 0 2px;
+    letter-spacing: -1px; }
+  .tile-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tile-sub { font-size: 12px; color: var(--muted); }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 3px; font-size: 12px;
+    font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap;
+  }
+  .chip-good { color: var(--good); background: rgba(10,125,41,.10); }
+  .chip-bad { color: var(--bad); background: rgba(192,57,43,.10); }
+  .chip-flat { color: var(--muted); background: rgba(0,0,0,.05); }
+
+  /* ---------- bars ---------- */
+  .legend { display: flex; align-items: center; gap: 7px; font-size: 12.5px;
+    color: var(--ink-2); margin-bottom: 14px; }
+  .legend .key { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+  .legend .key + .key { margin-inline-start: 12px; }
+  .key-cur { background: var(--brand); }
+  .key-prev { background: var(--prev); }
+  .bars { display: flex; flex-direction: column; gap: 13px; }
+  .bar-row { display: grid; grid-template-columns: minmax(96px, 30%) 1fr;
+    gap: 12px; align-items: center; }
+  .bar-name { font-size: 13px; color: var(--ink-2); overflow-wrap: anywhere; }
+  .bar-track { display: flex; flex-direction: column; gap: 4px; }
+  .bar-line { display: flex; align-items: center; gap: 7px; }
+  .bar-fill { height: 9px; min-width: 2px; display: block;
+    border-start-end-radius: 4px; border-end-end-radius: 4px; }
+  .bar-cur { background: var(--brand); }
+  .bar-prev { background: var(--prev); }
+  .bar-line b { font-size: 12px; font-weight: 600; color: var(--ink-2);
+    font-variant-numeric: tabular-nums; }
+
+  .stack-row { display: grid; grid-template-columns: 56px 1fr; gap: 12px;
+    align-items: center; margin-bottom: 10px; }
+  .stack-label { font-size: 13px; color: var(--ink-2); }
+  .stack { display: flex; height: 26px; border-radius: 6px; overflow: hidden; gap: 2px; }
+  .seg { display: flex; align-items: center; justify-content: center; font-style: normal; }
+  .seg span { font-size: 11.5px; color: #fff; font-weight: 600; font-style: normal; }
+  .stack .seg:last-child span { color: #3d3b34; }
+
+  /* ---------- tables ---------- */
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .tbl th {
+    font-size: 12px; font-weight: 600; color: var(--ink-2); text-transform: none;
+    padding: 0 10px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap;
+  }
+  .tbl td { padding: 9px 10px; border-bottom: 1px solid #f1f2f5;
+    font-variant-numeric: tabular-nums; }
+  .tbl tbody tr:last-child td { border-bottom: none; }
+  .tbl tbody tr:nth-child(even) { background: #fbfbfc; }
+  .u { direction: ltr; display: inline-block; unicode-bidi: embed;
+    font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
+
+  .summary-list { margin: 0; padding-inline-start: 20px; }
+  .summary-list li { margin-bottom: 9px; }
+  .note { font-size: 12.5px; color: var(--muted); background: #fbfbf7;
+    border-inline-start: 3px solid var(--accent); padding: 10px 14px;
+    border-radius: 0 8px 8px 0; margin: 14px 0 0; }
+  footer { text-align: center; color: var(--muted); font-size: 12px;
+    padding: 26px 0 0; border-top: 1px solid var(--grid); }
+
+  /* ---------- print ---------- */
+  @page { size: A4; margin: 10mm 8mm; }
+  @media print {
+    body { background: #fff; font-size: 11.5px; }
+    .page { max-width: none; padding: 0 4px 0; }
+    .cover { margin-bottom: 18px; padding: 22px 0 18px; }
+    .cover-in { max-width: none; padding: 0 10px; }
+    .card, .tile, section { break-inside: avoid; page-break-inside: avoid; }
+    section { margin-bottom: 20px; }
+    h2 { font-size: 16px; }
+    .cover h1 { font-size: 26px; }
+    .tile { padding: 12px 12px 10px; }
+    .tile-value { font-size: 24px; }
+    .tile-label { font-size: 11px; }
+    .tile-sub { font-size: 10px; }
+    .tiles { gap: 8px; }
+    .grid-2 { gap: 10px; }
+    .card { padding: 14px 15px; }
+    /* Headers wrap in print: a nowrap 7-column table is what pushes the page
+       wider than A4 and clips the right edge. */
+    .tbl { font-size: 10px; table-layout: fixed; }
+    .tbl th { white-space: normal; font-size: 9.5px; padding: 0 5px 6px; }
+    .tbl td { padding: 4px 5px; overflow-wrap: anywhere; }
+    .u { font-size: 9px; }
+    .bar-name { font-size: 10px; }
+    .no-print { display: none; }
+  }
+  @media (max-width: 780px) {
+    .tiles { grid-template-columns: 1fr 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .cover-in { flex-direction: column-reverse; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="cover-in">
+    <div>
+      <h1>דוח קידום אורגני</h1>
+      <div class="sub">אולסי מערכות · olsi.co.il</div>
+      <div class="meta">
+        תקופת הדוח: <b>1-31 ביולי 2026</b><br>
+        השוואה מול חודש <b>יוני</b> · הופק בתאריך 04/08/2026
+      </div>
+    </div>
+    <div class="cover-side">
+      <div class="logo-box"><img src="data:image/png;base64,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" alt="אולסי מערכות"></div>
+      <a class="dl no-print" href="olsi_2026-07.pdf" download>הורדת הדוח כ-PDF</a>
+    </div>
+  </div>
+</header>
+<div class="rule"></div>
+
+<div class="page">
+
+<section>
+  <h2>תמונת מצב</h2>
+  <p class="lead">המדדים המרכזיים של יולי בהשוואה ליוני.</p>
+  <div class="tiles"><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">כניסות לאתר</div>
+  <div class="tile-value">1,221</div>
+  <div class="tile-foot"><span class="chip chip-bad">▼ 40%</span><span class="tile-sub">לעומת 2,051 ביוני</span></div>
+</div><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">תנועה אורגנית מגוגל</div>
+  <div class="tile-value">123</div>
+  <div class="tile-foot"><span class="chip chip-good">▲ 28%</span><span class="tile-sub">לעומת 96 ביוני</span></div>
+</div><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">קליקים מתוצאות החיפוש</div>
+  <div class="tile-value">74</div>
+  <div class="tile-foot"><span class="chip chip-good">▲ 17%</span><span class="tile-sub">מתוך 15,878 הופעות</span></div>
+</div><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">ליד נשלח</div>
+  <div class="tile-value">8</div>
+  <div class="tile-foot"><span class="chip chip-good">▲ 300%</span><span class="tile-sub">לעומת 2 ביוני</span></div>
+</div></div>
+  <div class="card" style="margin-top:16px">
+    <h3>עיקרי הדברים</h3>
+    <ul class="summary-list"><li>התנועה לאתר ירדה ב-40% לעומת יוני - 1,221 כניסות מול 2,051.</li><li>התנועה האורגנית מגוגל, שהיא מנוע הצמיחה המרכזי, צמחה ב-28% והיא מהווה 10% מכלל הכניסות.</li><li>השינוי בסך הכניסות נובע בעיקר מתנועה ממומנת (1,739 ← 717), ולא מהערוץ האורגני.</li><li>הקליקים מתוצאות החיפוש של גוגל עלו ב-17% (74 מול 63), עם שיפור בשיעור ההקלקה.</li><li>24 מילות מפתח נמצאות בעמוד הראשון של גוגל לעומת 29 ביוני, מתוכן 7 בשלושת המקומות הראשונים.</li><li>נרשמו 8 אירועי "ליד נשלח" ביולי לעומת 2 ביוני.</li></ul>
+  </div>
+</section>
+
+<section>
+  <h2>התנועה לאתר</h2>
+  <p class="lead">כמה גולשים הגיעו לאתר ומאיפה הם הגיעו.</p>
+  <div class="grid-2">
+    <div class="card"><h3>כניסות לפי מקור תנועה</h3><div class="legend"><span class="key key-cur"></span>יולי<span class="key key-prev"></span>יוני</div>
+<div class="bars">
+<div class="bar-row">
+  <div class="bar-name">תנועה ממומנת</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:41.23%"></i><b>717</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:100.00%"></i><b>1,739</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועה ישירה</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:19.90%"></i><b>346</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:9.43%"></i><b>164</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועה אורגנית</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:7.07%"></i><b>123</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:5.52%"></i><b>96</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">אחר</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:0.81%"></i><b>14</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:2.76%"></i><b>48</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועת הפניה</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:0.81%"></i><b>14</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:0.17%"></i><b>3</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועת AI</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:0.35%"></i><b>6</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:0.06%"></i><b>1</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועה ממומנת מרשתות חברתיות</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:0.06%"></i><b>1</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:0.00%"></i><b>—</b></div>
+  </div>
+</div>
+</div></div>
+    <div class="card"><h3>מדדי תנועה מרכזיים</h3><table class="tbl "><thead><tr><th style="text-align:right">מדד</th><th style="text-align:center">יולי</th><th style="text-align:center">יוני</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">כניסות לאתר</td><td style="text-align:center">1,221</td><td style="text-align:center">2,051</td><td style="text-align:center"><span class="chip chip-bad">▼ 40%</span></td></tr><tr><td style="text-align:right">מתוכן אורגני מגוגל</td><td style="text-align:center">123</td><td style="text-align:center">96</td><td style="text-align:center"><span class="chip chip-good">▲ 28%</span></td></tr><tr><td style="text-align:right">משתמשים חדשים</td><td style="text-align:center">1,017</td><td style="text-align:center">1,713</td><td style="text-align:center"><span class="chip chip-bad">▼ 41%</span></td></tr><tr><td style="text-align:right">שיעור משתמשים חדשים</td><td style="text-align:center">83.3%</td><td style="text-align:center">83.5%</td><td style="text-align:center"></td></tr><tr><td style="text-align:right">שיעור נטישה</td><td style="text-align:center">61.2%</td><td style="text-align:center">66.9%</td><td style="text-align:center"><span class="chip chip-good">▼ 9%</span></td></tr></tbody></table></div>
+  </div>
+  <div class="grid-2">
+    <div class="card"><h3>נייד מול מחשב</h3><div class="stack-row"><div class="stack-label">יולי</div><div class="stack"><i class="seg" style="width:59.90%;background:#C2185B"><span>נייד 60%</span></i><i class="seg" style="width:40.10%;background:#b9b7ae"><span>מחשב 40%</span></i></div></div><div class="stack-row"><div class="stack-label">יוני</div><div class="stack"><i class="seg" style="width:78.36%;background:#C2185B"><span>נייד 78%</span></i><i class="seg" style="width:21.64%;background:#b9b7ae"><span>מחשב 22%</span></i></div></div></div>
+    <div class="card"><h3>כניסות לפי סוג מכשיר</h3><table class="tbl "><thead><tr><th style="text-align:right">מכשיר</th><th style="text-align:center">יולי</th><th style="text-align:center">יוני</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">נייד וטאבלט</td><td style="text-align:center">735</td><td style="text-align:center">1,611</td><td style="text-align:center"><span class="chip chip-bad">▼ 54%</span></td></tr><tr><td style="text-align:right">מחשב שולחני</td><td style="text-align:center">492</td><td style="text-align:center">445</td><td style="text-align:center"><span class="chip chip-good">▲ 11%</span></td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section>
+  <h2>מיקומים בגוגל</h2>
+  <p class="lead">המיקום מחושב כממוצע חודשי לכל מילת מפתח, על בסיס כל הימים שנמדדו
+  באותו חודש - כך ההשוואה בין החודשים אינה מושפעת ממדידה בודדת ביום מסוים.</p>
+  <div class="tiles"><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">מילות מפתח במעקב</div>
+  <div class="tile-value">68</div>
+  <div class="tile-foot"><span class="tile-sub">סה״כ בניטור שוטף</span></div>
+</div><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">בעמוד הראשון בגוגל</div>
+  <div class="tile-value">24</div>
+  <div class="tile-foot"><span class="chip chip-bad">▼ 17%</span><span class="tile-sub">לעומת 29 ביוני</span></div>
+</div><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">בשלושת המקומות הראשונים</div>
+  <div class="tile-value">7</div>
+  <div class="tile-foot"><span class="chip chip-bad">▼ 36%</span><span class="tile-sub">לעומת 11 ביוני</span></div>
+</div><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">מילים שהשתפרו</div>
+  <div class="tile-value">12</div>
+  <div class="tile-foot"><span class="tile-sub">מתוך 59 מילים ברות-השוואה</span></div>
+</div></div>
+  <div class="card" style="margin-top:16px">
+    <h3>התפלגות המילים לפי טווח מיקומים</h3>
+    <div class="legend"><span class="key key-cur"></span>יולי<span class="key key-prev"></span>יוני</div>
+<div class="bars">
+<div class="bar-row">
+  <div class="bar-name">1-3</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:33.33%"></i><b>7</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:52.38%"></i><b>11</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">4-10</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:80.95%"></i><b>17</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:85.71%"></i><b>18</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">11-20</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:71.43%"></i><b>15</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:71.43%"></i><b>15</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">21 ומעלה</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>21</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:80.95%"></i><b>17</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">ללא מיקום</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:38.10%"></i><b>8</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:33.33%"></i><b>7</b></div>
+  </div>
+</div>
+</div>
+  </div>
+  <div class="card">
+    <h3>המילים שהשתפרו הכי הרבה</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">יוני</th><th style="text-align:center">יולי</th><th style="text-align:center">שיפור</th></tr></thead><tbody><tr><td style="text-align:right">אוטומציה של תהליכים באקסל</td><td style="text-align:center">נמוך</td><td style="text-align:center">31.6</td><td style="text-align:center">19.2</td><td style="text-align:center"><span class="chip chip-good">▲ 12.4</span></td></tr><tr><td style="text-align:right">תרשים Gantt</td><td style="text-align:center">50</td><td style="text-align:center">16.6</td><td style="text-align:center">8.4</td><td style="text-align:center"><span class="chip chip-good">▲ 8.2</span></td></tr><tr><td style="text-align:right">תרשים גאנט</td><td style="text-align:center">130</td><td style="text-align:center">19.4</td><td style="text-align:center">12.1</td><td style="text-align:center"><span class="chip chip-good">▲ 7.3</span></td></tr><tr><td style="text-align:right">פיתוח תוכנה לניהול תיקי לקוחות</td><td style="text-align:center">50</td><td style="text-align:center">36.3</td><td style="text-align:center">29.8</td><td style="text-align:center"><span class="chip chip-good">▲ 6.5</span></td></tr><tr><td style="text-align:right">פיתוח תוכנה לארגון</td><td style="text-align:center">40</td><td style="text-align:center">9.0</td><td style="text-align:center">4.4</td><td style="text-align:center"><span class="chip chip-good">▲ 4.6</span></td></tr><tr><td style="text-align:right">פיתוח תוכנה לניהול עסקים</td><td style="text-align:center">40</td><td style="text-align:center">9.5</td><td style="text-align:center">7.2</td><td style="text-align:center"><span class="chip chip-good">▲ 2.3</span></td></tr><tr><td style="text-align:right">בניית תוכנה לעסק</td><td style="text-align:center">100</td><td style="text-align:center">11.8</td><td style="text-align:center">9.8</td><td style="text-align:center"><span class="chip chip-good">▲ 2.0</span></td></tr><tr><td style="text-align:right">פיתוח תוכנה למפעל</td><td style="text-align:center">40</td><td style="text-align:center">2.1</td><td style="text-align:center">1.1</td><td style="text-align:center"><span class="chip chip-good">▲ 1.0</span></td></tr><tr><td style="text-align:right">פיתוח תרשים גאנט</td><td style="text-align:center">40</td><td style="text-align:center">3.1</td><td style="text-align:center">2.3</td><td style="text-align:center"><span class="chip chip-good">▲ 0.8</span></td></tr><tr><td style="text-align:right">פיתוח תוכנה לעסק</td><td style="text-align:center">50</td><td style="text-align:center">9.4</td><td style="text-align:center">9.1</td><td style="text-align:center"><span class="chip chip-good">▲ 0.3</span></td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <h3>המילים החזקות ביותר כרגע</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">מיקום ממוצע ביולי</th><th style="text-align:center">המיקום הטוב ביותר</th></tr></thead><tbody><tr><td style="text-align:right">אקסס פיתוח</td><td style="text-align:center">40</td><td style="text-align:center">1.1</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">פיתוח תוכנה למפעל</td><td style="text-align:center">40</td><td style="text-align:center">1.1</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">פיתוח באקסס</td><td style="text-align:center">40</td><td style="text-align:center">1.9</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">קצירת נתונים</td><td style="text-align:center">40</td><td style="text-align:center">2.0</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">פיתוח תרשים גאנט</td><td style="text-align:center">40</td><td style="text-align:center">2.3</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">פיתוח תוכנה באקסל</td><td style="text-align:center">40</td><td style="text-align:center">2.3</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">אקסס פיתוח תוכנה</td><td style="text-align:center">40</td><td style="text-align:center">2.6</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">פיתוח תוכנה באקסס</td><td style="text-align:center">40</td><td style="text-align:center">3.2</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">פיתוח תוכנה אקסס</td><td style="text-align:center">40</td><td style="text-align:center">3.8</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">פיתוח תרשים גנט</td><td style="text-align:center">30</td><td style="text-align:center">3.9</td><td style="text-align:center">3</td></tr><tr><td style="text-align:right">פיתוח תוכנה לארגון</td><td style="text-align:center">40</td><td style="text-align:center">4.4</td><td style="text-align:center">3</td></tr><tr><td style="text-align:right">פיתוח באקסל</td><td style="text-align:center">40</td><td style="text-align:center">5.2</td><td style="text-align:center">3</td></tr><tr><td style="text-align:right">פיתוח תוכנה עבור חברת הייטק</td><td style="text-align:center">40</td><td style="text-align:center">6.7</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">פיתוח תוכנה לעסקים</td><td style="text-align:center">130</td><td style="text-align:center">7.0</td><td style="text-align:center">5</td></tr><tr><td style="text-align:right">פיתוח תוכנה לניהול עסקים</td><td style="text-align:center">40</td><td style="text-align:center">7.2</td><td style="text-align:center">1</td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <h3>מילים שדורשות תשומת לב</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">יוני</th><th style="text-align:center">יולי</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">חברת פיתוח תוכנה</td><td style="text-align:center">110</td><td style="text-align:center">14.1</td><td style="text-align:center">35.3</td><td style="text-align:center"><span class="chip chip-bad">▼ 21.2</span></td></tr><tr><td style="text-align:right">פיתוח מערכות מידע אינטרנטיות</td><td style="text-align:center">40</td><td style="text-align:center">23.1</td><td style="text-align:center">36.7</td><td style="text-align:center"><span class="chip chip-bad">▼ 13.6</span></td></tr><tr><td style="text-align:right">פיתוח אפליקציות בהתאמה אישית</td><td style="text-align:center">30</td><td style="text-align:center">23.2</td><td style="text-align:center">36.1</td><td style="text-align:center"><span class="chip chip-bad">▼ 12.9</span></td></tr><tr><td style="text-align:right">פיתוח אתרי אינטרנט מורכבים</td><td style="text-align:center">30</td><td style="text-align:center">19.5</td><td style="text-align:center">30.9</td><td style="text-align:center"><span class="chip chip-bad">▼ 11.4</span></td></tr><tr><td style="text-align:right">פיתוח תוכנת עזר לסחר ביהלומים</td><td style="text-align:center">40</td><td style="text-align:center">24.6</td><td style="text-align:center">35.6</td><td style="text-align:center"><span class="chip chip-bad">▼ 11.0</span></td></tr></tbody></table>
+  </div>
+</section>
+
+<section>
+  <h2>עשרת העמודים החזקים ביותר</h2>
+  <p class="lead">העמודים שמביאים הכי הרבה כניסות מתוצאות החיפוש של גוגל.</p>
+  <div class="card"><div class="legend"><span class="key key-cur"></span>יולי<span class="key key-prev"></span>יוני</div>
+<div class="bars">
+<div class="bar-row">
+  <div class="bar-name">www.olsi.co.il/</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>36</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:52.78%"></i><b>19</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.olsi.co.il/gantt-chart/</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:16.67%"></i><b>6</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:8.33%"></i><b>3</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.olsi.co.il/en/</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:11.11%"></i><b>4</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:0.00%"></i><b>0</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.olsi.co.il/case-study-gantt/</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:8.33%"></i><b>3</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:0.00%"></i><b>0</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.olsi.co.il/app-development/</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:5.56%"></i><b>2</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:0.00%"></i><b>0</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.olsi.co.il/legacy-system-modernization/</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:5.56%"></i><b>2</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:5.56%"></i><b>2</b></div>
+  </div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.olsi.co.il/software-development/</div>
+  <div class="bar-track">
+    <div class="bar-line"><i class="bar-fill bar-cur" style="width:5.56%"></i><b>2</b></div>
+    <div class="bar-line"><i class="bar-fill bar-prev" style="width:16.67%"></i><b>6</b></div>
+  </div>
+</div>
+</div></div>
+  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">עמוד</th><th style="text-align:center">קליקים יולי</th><th style="text-align:center">קליקים יוני</th><th style="text-align:center">שינוי</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right"><span class="u">www.olsi.co.il/</span></td><td style="text-align:center">36</td><td style="text-align:center">19</td><td style="text-align:center"><span class="chip chip-good">▲ 89%</span></td><td style="text-align:center">240</td><td style="text-align:center">15.00%</td><td style="text-align:center">19.36</td></tr><tr><td style="text-align:right"><span class="u">www.olsi.co.il/gantt-chart/</span></td><td style="text-align:center">6</td><td style="text-align:center">3</td><td style="text-align:center"><span class="chip chip-good">▲ 100%</span></td><td style="text-align:center">1,026</td><td style="text-align:center">0.58%</td><td style="text-align:center">12.02</td></tr><tr><td style="text-align:right"><span class="u">www.olsi.co.il/en/</span></td><td style="text-align:center">4</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">134</td><td style="text-align:center">2.99%</td><td style="text-align:center">7.72</td></tr><tr><td style="text-align:right"><span class="u">www.olsi.co.il/case-study-gantt/</span></td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">1,220</td><td style="text-align:center">0.25%</td><td style="text-align:center">22.60</td></tr><tr><td style="text-align:right"><span class="u">www.olsi.co.il/app-development/</span></td><td style="text-align:center">2</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">1,960</td><td style="text-align:center">0.10%</td><td style="text-align:center">38.57</td></tr><tr><td style="text-align:right"><span class="u">www.olsi.co.il/legacy-system-modernization/</span></td><td style="text-align:center">2</td><td style="text-align:center">2</td><td style="text-align:center"><span class="chip chip-flat">ללא שינוי</span></td><td style="text-align:center">239</td><td style="text-align:center">0.84%</td><td style="text-align:center">6.55</td></tr><tr><td style="text-align:right"><span class="u">www.olsi.co.il/software-development/</span></td><td style="text-align:center">2</td><td style="text-align:center">6</td><td style="text-align:center"><span class="chip chip-bad">▼ 67%</span></td><td style="text-align:center">1,388</td><td style="text-align:center">0.14%</td><td style="text-align:center">37.36</td></tr><tr><td style="text-align:right"><span class="u">www.olsi.co.il/software-dev-high-tech/</span></td><td style="text-align:center">1</td><td style="text-align:center">1</td><td style="text-align:center"><span class="chip chip-flat">ללא שינוי</span></td><td style="text-align:center">361</td><td style="text-align:center">0.28%</td><td style="text-align:center">53.32</td></tr><tr><td style="text-align:right"><span class="u">www.olsi.co.il/אולסי-בית-תוכנה-בוטיק-לפיתוח-אפליקציו/</span></td><td style="text-align:center">1</td><td style="text-align:center">1</td><td style="text-align:center"><span class="chip chip-flat">ללא שינוי</span></td><td style="text-align:center">25</td><td style="text-align:center">4.00%</td><td style="text-align:center">4.68</td></tr><tr><td style="text-align:right"><span class="u">www.olsi.co.il/על-אקסל-ו-vba/</span></td><td style="text-align:center">1</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">20</td><td style="text-align:center">5.00%</td><td style="text-align:center">3.80</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>ביטויי החיפוש המובילים</h2>
+  <p class="lead">מה גולשים הקלידו בגוגל לפני שהגיעו לאתר.</p>
+  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">ביטוי חיפוש</th><th style="text-align:center">קליקים יולי</th><th style="text-align:center">קליקים יוני</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right">olsi</td><td style="text-align:center">4</td><td style="text-align:center">1</td><td style="text-align:center">45</td><td style="text-align:center">8.89%</td><td style="text-align:center">4.33</td></tr><tr><td style="text-align:right">תרשים גאנט מוכן</td><td style="text-align:center">2</td><td style="text-align:center">0</td><td style="text-align:center">44</td><td style="text-align:center">4.55%</td><td style="text-align:center">6.32</td></tr><tr><td style="text-align:right">חברות it</td><td style="text-align:center">1</td><td style="text-align:center">0</td><td style="text-align:center">2</td><td style="text-align:center">50.00%</td><td style="text-align:center">66.00</td></tr><tr><td style="text-align:right">אולסי</td><td style="text-align:center">1</td><td style="text-align:center">0</td><td style="text-align:center">12</td><td style="text-align:center">8.33%</td><td style="text-align:center">8.83</td></tr><tr><td style="text-align:right">בית תוכנה לפיתוח אפליקציות</td><td style="text-align:center">1</td><td style="text-align:center">1</td><td style="text-align:center">38</td><td style="text-align:center">2.63%</td><td style="text-align:center">7.24</td></tr><tr><td style="text-align:right">פיתוח תוכנה</td><td style="text-align:center">1</td><td style="text-align:center">0</td><td style="text-align:center">198</td><td style="text-align:center">0.51%</td><td style="text-align:center">41.21</td></tr><tr><td style="text-align:right">פיתוח תוכנה לעסק</td><td style="text-align:center">1</td><td style="text-align:center">0</td><td style="text-align:center">30</td><td style="text-align:center">3.33%</td><td style="text-align:center">12.07</td></tr><tr><td style="text-align:right">פיתוח אפליקציות</td><td style="text-align:center">1</td><td style="text-align:center">0</td><td style="text-align:center">54</td><td style="text-align:center">1.85%</td><td style="text-align:center">52.67</td></tr><tr><td style="text-align:right">בניית מערכות</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">5</td><td style="text-align:center">20.00%</td><td style="text-align:center">12.00</td></tr><tr><td style="text-align:right">api מה זה</td><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">33</td><td style="text-align:center">0.00%</td><td style="text-align:center"></td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>פניות ומעורבות באתר</h2>
+  <p class="lead">אירועי המעורבות שנמדדים באתר - טפסים, לחיצות ופעולות שמעידות על כוונת פנייה.</p>
+  
+  <div class="card">
+    <h3>אירועי מעורבות באתר</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">אירוע באתר</th><th style="text-align:center">יולי</th><th style="text-align:center">יוני</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">קליק</td><td style="text-align:center">240</td><td style="text-align:center">321</td><td style="text-align:center"><span class="chip chip-bad">▼ 25%</span></td></tr><tr><td style="text-align:right">גלילה</td><td style="text-align:center">181</td><td style="text-align:center">251</td><td style="text-align:center"><span class="chip chip-bad">▼ 28%</span></td></tr><tr><td style="text-align:right">התחלת טופס</td><td style="text-align:center">23</td><td style="text-align:center">18</td><td style="text-align:center"><span class="chip chip-good">▲ 28%</span></td></tr><tr><td style="text-align:right">ליד נשלח</td><td style="text-align:center">8</td><td style="text-align:center">2</td><td style="text-align:center"><span class="chip chip-good">▲ 300%</span></td></tr></tbody></table>
+  </div>
+</section>
+
+<footer>
+  דוח זה הופק עבור אולסי מערכות · olsi.co.il · 04/08/2026<br>
+  מקורות הנתונים: Google Analytics 4, Google Search Console ומערכת ניטור המיקומים ZEFO.
+</footer>
+</div>
+</body>
+</html>
