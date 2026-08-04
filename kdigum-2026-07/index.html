@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>דוח קידום אורגני - קיסר דיגום - יולי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #1F6E27;
+    --brand-deep: #113d15;
+    --accent: #EF8F1E;
+    --prev: #b9b7ae;
+    --good: #0a7d29;
+    --bad: #c0392b;
+    --muted: #8a8880;
+    --ink: #14161c;
+    --ink-2: #4b5060;
+    --surface: #ffffff;
+    --plane: #f6f7f9;
+    --grid: #e7e8ec;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--plane); color: var(--ink);
+    font-family: Heebo, "Segoe UI", Arial, sans-serif;
+    font-size: 15px; line-height: 1.6; -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { max-width: 1000px; margin: 0 auto; padding: 0 28px 64px; }
+
+  /* ---------- cover ---------- */
+  .cover {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+    color: #fff; padding: 56px 0 44px; margin-bottom: 34px;
+  }
+  .cover-in { max-width: 1000px; margin: 0 auto; padding: 0 28px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
+  .cover h1 { font-size: 34px; font-weight: 800; margin: 0 0 6px; letter-spacing: -.5px; }
+  .cover .sub { font-size: 17px; opacity: .82; font-weight: 300; }
+  .cover .meta { margin-top: 22px; font-size: 14px; opacity: .78; }
+  .cover .meta b { font-weight: 500; }
+  .cover-side { display: flex; flex-direction: column; align-items: stretch;
+    gap: 10px; flex: 0 0 auto; }
+  .dl {
+    display: block; text-align: center; text-decoration: none;
+    background: var(--accent); color: #14161c; font-weight: 700; font-size: 13px;
+    padding: 9px 14px; border-radius: 9px;
+  }
+  .dl:hover { filter: brightness(1.08); }
+  .logo-box {
+    background: #fff; border-radius: 14px; padding: 16px 20px;
+    display: flex; align-items: center; min-height: 78px; flex: 0 0 auto;
+  }
+  .logo-box img { max-height: 62px; max-width: 210px; display: block; }
+  .wordmark { color: var(--brand); font-weight: 800; font-size: 22px; }
+  .rule { height: 4px; background: var(--accent); }
+
+  /* ---------- structure ---------- */
+  section { margin: 0 0 40px; }
+  h2 {
+    font-size: 21px; font-weight: 700; margin: 0 0 4px;
+    padding-right: 14px; border-right: 4px solid var(--accent);
+  }
+  .lead { color: var(--ink-2); font-size: 14px; margin: 0 0 18px; padding-right: 18px; }
+  h3 { font-size: 15px; font-weight: 700; margin: 0 0 14px; color: var(--ink); }
+  .card {
+    background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 16px;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-2 > .card { margin-bottom: 0; }
+  .grid-2 + .grid-2 { margin-top: 16px; }
+
+  /* ---------- tiles ---------- */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
+    padding: 18px 18px 16px; position: relative; overflow: hidden;
+  }
+  .tile::before {
+    content: ""; position: absolute; inset-inline-start: 0; top: 0; bottom: 0;
+    width: 4px; background: var(--tile-accent, var(--brand));
+  }
+  .tile-label { font-size: 13px; color: var(--ink-2); font-weight: 500; }
+  .tile-value { font-size: 34px; font-weight: 800; line-height: 1.15; margin: 4px 0 2px;
+    letter-spacing: -1px; }
+  .tile-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tile-sub { font-size: 12px; color: var(--muted); }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 3px; font-size: 12px;
+    font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap;
+  }
+  .chip-good { color: var(--good); background: rgba(10,125,41,.10); }
+  .chip-bad { color: var(--bad); background: rgba(192,57,43,.10); }
+  .chip-flat { color: var(--muted); background: rgba(0,0,0,.05); }
+
+  /* ---------- bars ---------- */
+  .legend { display: flex; align-items: center; gap: 7px; font-size: 12.5px;
+    color: var(--ink-2); margin-bottom: 14px; }
+  .legend .key { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+  .legend .key + .key { margin-inline-start: 12px; }
+  .key-cur { background: var(--brand); }
+  .key-prev { background: var(--prev); }
+  .bars { display: flex; flex-direction: column; gap: 13px; }
+  .bar-row { display: grid; grid-template-columns: minmax(96px, 30%) 1fr;
+    gap: 12px; align-items: center; }
+  .bar-name { font-size: 13px; color: var(--ink-2); overflow-wrap: anywhere; }
+  .bar-track { display: flex; flex-direction: column; gap: 4px; }
+  .bar-line { display: flex; align-items: center; gap: 7px; }
+  .bar-fill { height: 9px; min-width: 2px; display: block;
+    border-start-end-radius: 4px; border-end-end-radius: 4px; }
+  .bar-cur { background: var(--brand); }
+  .bar-prev { background: var(--prev); }
+  .bar-line b { font-size: 12px; font-weight: 600; color: var(--ink-2);
+    font-variant-numeric: tabular-nums; }
+
+  .stack-row { display: grid; grid-template-columns: 56px 1fr; gap: 12px;
+    align-items: center; margin-bottom: 10px; }
+  .stack-label { font-size: 13px; color: var(--ink-2); }
+  .stack { display: flex; height: 26px; border-radius: 6px; overflow: hidden; gap: 2px; }
+  .seg { display: flex; align-items: center; justify-content: center; font-style: normal; }
+  .seg span { font-size: 11.5px; color: #fff; font-weight: 600; font-style: normal; }
+  .stack .seg:last-child span { color: #3d3b34; }
+
+  /* ---------- tables ---------- */
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .tbl th {
+    font-size: 12px; font-weight: 600; color: var(--ink-2); text-transform: none;
+    padding: 0 10px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap;
+  }
+  .tbl td { padding: 9px 10px; border-bottom: 1px solid #f1f2f5;
+    font-variant-numeric: tabular-nums; }
+  .tbl tbody tr:last-child td { border-bottom: none; }
+  .tbl tbody tr:nth-child(even) { background: #fbfbfc; }
+  .u { direction: ltr; display: inline-block; unicode-bidi: embed;
+    font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
+
+  .summary-list { margin: 0; padding-inline-start: 20px; }
+  .summary-list li { margin-bottom: 9px; }
+  .note { font-size: 12.5px; color: var(--muted); background: #fbfbf7;
+    border-inline-start: 3px solid var(--accent); padding: 10px 14px;
+    border-radius: 0 8px 8px 0; margin: 14px 0 0; }
+  footer { text-align: center; color: var(--muted); font-size: 12px;
+    padding: 26px 0 0; border-top: 1px solid var(--grid); }
+
+  /* ---------- print ---------- */
+  @page { size: A4; margin: 10mm 8mm; }
+  @media print {
+    body { background: #fff; font-size: 11.5px; }
+    .page { max-width: none; padding: 0 4px 0; }
+    .cover { margin-bottom: 18px; padding: 22px 0 18px; }
+    .cover-in { max-width: none; padding: 0 10px; }
+    .card, .tile, section { break-inside: avoid; page-break-inside: avoid; }
+    section { margin-bottom: 20px; }
+    h2 { font-size: 16px; }
+    .cover h1 { font-size: 26px; }
+    .tile { padding: 12px 12px 10px; }
+    .tile-value { font-size: 24px; }
+    .tile-label { font-size: 11px; }
+    .tile-sub { font-size: 10px; }
+    .tiles { gap: 8px; }
+    .grid-2 { gap: 10px; }
+    .card { padding: 14px 15px; }
+    /* Headers wrap in print: a nowrap 7-column table is what pushes the page
+       wider than A4 and clips the right edge. */
+    .tbl { font-size: 10px; table-layout: fixed; }
+    .tbl th { white-space: normal; font-size: 9.5px; padding: 0 5px 6px; }
+    .tbl td { padding: 4px 5px; overflow-wrap: anywhere; }
+    .u { font-size: 9px; }
+    .bar-name { font-size: 10px; }
+    .no-print { display: none; }
+  }
+  @media (max-width: 780px) {
+    .tiles { grid-template-columns: 1fr 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .cover-in { flex-direction: column-reverse; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="cover-in">
+    <div>
+      <h1>דוח קידום אורגני</h1>
+      <div class="sub">קיסר דיגום · kdigum.co.il</div>
+      <div class="meta">
+        תקופת הדוח: <b>1-31 ביולי 2026</b><br>
+        החודש הראשון עם נתוני תנועה לאתר · הופק בתאריך 04/08/2026
+      </div>
+    </div>
+    <div class="cover-side">
+      <div class="logo-box"><img src="data:image/png;base64,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" alt="קיסר דיגום"></div>
+      <a class="dl no-print" href="kdigum_2026-07.pdf" download>הורדת הדוח כ-PDF</a>
+    </div>
+  </div>
+</header>
+<div class="rule"></div>
+
+<div class="page">
+
+<section>
+  <h2>תמונת מצב</h2>
+  <p class="lead">המדדים המרכזיים של יולי. האתר עלה לאוויר לאחרונה ולכן זהו החודש הראשון עם נתוני תנועה מלאים.</p>
+  <div class="tiles"><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">כניסות לאתר</div>
+  <div class="tile-value">284</div>
+  <div class="tile-foot"><span class="chip chip-flat">חודש ראשון במדידה</span><span class="tile-sub">אין נתוני יוני להשוואה</span></div>
+</div><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">תנועה אורגנית מגוגל</div>
+  <div class="tile-value">122</div>
+  <div class="tile-foot"><span class="chip chip-flat">חודש ראשון במדידה</span><span class="tile-sub">43% מכלל הכניסות</span></div>
+</div><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">קליקים מתוצאות החיפוש</div>
+  <div class="tile-value">190</div>
+  <div class="tile-foot"><span class="chip chip-good">▲ 83%</span><span class="tile-sub">מתוך 9,335 הופעות</span></div>
+</div><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">התחלת טופס</div>
+  <div class="tile-value">8</div>
+  <div class="tile-foot"><span class="chip chip-flat">חודש ראשון במדידה</span><span class="tile-sub">אין נתוני יוני להשוואה</span></div>
+</div></div>
+  <div class="card" style="margin-top:16px">
+    <h3>עיקרי הדברים</h3>
+    <ul class="summary-list"><li>זהו החודש הראשון שבו נמדדת התנועה לאתר, ולכן אין נתוני יוני להשוואה בסעיפי התנועה, המכשירים והאירועים. נתוני החיפוש של גוגל וטבלת המיקומים כן כוללים השוואה היכן שקיימת היסטוריה.</li><li>ביולי נרשמו 284 כניסות לאתר, מתוכן 122 מחיפוש אורגני בגוגל.</li><li>הקליקים מתוצאות החיפוש של גוגל עלו ב-83% (190 מול 104), עם שיפור בשיעור ההקלקה.</li><li>11 מתוך 64 מילות המפתח שבמעקב נמצאות בעמוד הראשון של גוגל, מתוכן 4 בשלושת המקומות הראשונים.</li><li>נרשמו 8 אירועי "התחלת טופס" ביולי.</li></ul>
+  </div>
+</section>
+
+<section>
+  <h2>התנועה לאתר</h2>
+  <p class="lead">כמה גולשים הגיעו לאתר ומאיפה הם הגיעו ביולי. אין נתוני יוני להשוואה.</p>
+  <div class="grid-2">
+    <div class="card"><h3>כניסות לפי מקור תנועה</h3><div class="bars">
+<div class="bar-row">
+  <div class="bar-name">תנועה ישירה</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>142</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועה אורגנית</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:85.92%"></i><b>122</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועת הפניה</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:8.45%"></i><b>12</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועה ממומנת</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:4.23%"></i><b>6</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועת AI</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:1.41%"></i><b>2</b></div></div>
+</div>
+</div></div>
+    <div class="card"><h3>מדדי תנועה מרכזיים</h3><table class="tbl "><thead><tr><th style="text-align:right">מדד</th><th style="text-align:center">יולי</th></tr></thead><tbody><tr><td style="text-align:right">כניסות לאתר</td><td style="text-align:center">284</td></tr><tr><td style="text-align:right">מתוכן אורגני מגוגל</td><td style="text-align:center">122</td></tr><tr><td style="text-align:right">משתמשים חדשים</td><td style="text-align:center">203</td></tr><tr><td style="text-align:right">שיעור משתמשים חדשים</td><td style="text-align:center">71.5%</td></tr><tr><td style="text-align:right">שיעור נטישה</td><td style="text-align:center">47.2%</td></tr></tbody></table></div>
+  </div>
+  <div class="grid-2">
+    <div class="card"><h3>נייד מול מחשב</h3><div class="stack-row"><div class="stack-label">יולי</div><div class="stack"><i class="seg" style="width:45.39%;background:#1F6E27"><span>נייד 45%</span></i><i class="seg" style="width:54.61%;background:#b9b7ae"><span>מחשב 55%</span></i></div></div></div>
+    <div class="card"><h3>כניסות לפי סוג מכשיר</h3><table class="tbl "><thead><tr><th style="text-align:right">מכשיר</th><th style="text-align:center">יולי</th></tr></thead><tbody><tr><td style="text-align:right">נייד וטאבלט</td><td style="text-align:center">133</td></tr><tr><td style="text-align:right">מחשב שולחני</td><td style="text-align:center">160</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section>
+  <h2>מיקומים בגוגל</h2>
+  <p class="lead">המיקום מחושב כממוצע חודשי לכל מילת מפתח, על בסיס כל הימים שנמדדו
+  באותו חודש - כך ההשוואה בין החודשים אינה מושפעת ממדידה בודדת ביום מסוים.</p>
+  <div class="tiles"><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">מילות מפתח במעקב</div>
+  <div class="tile-value">64</div>
+  <div class="tile-foot"><span class="tile-sub">סה״כ בניטור שוטף</span></div>
+</div><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">בעמוד הראשון בגוגל</div>
+  <div class="tile-value">11</div>
+  <div class="tile-foot"><span class="tile-sub">מתוך 64 מילים במעקב</span></div>
+</div><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">בשלושת המקומות הראשונים</div>
+  <div class="tile-value">4</div>
+  <div class="tile-foot"><span class="tile-sub">מתוך 64 מילים במעקב</span></div>
+</div><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">מילים שהשתפרו</div>
+  <div class="tile-value">14</div>
+  <div class="tile-foot"><span class="tile-sub">מתוך 24 מילים ברות-השוואה</span></div>
+</div></div>
+  <div class="card" style="margin-top:16px">
+    <h3>התפלגות המילים לפי טווח מיקומים</h3>
+    <div class="bars">
+<div class="bar-row">
+  <div class="bar-name">1-3</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:20.00%"></i><b>4</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">4-10</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:35.00%"></i><b>7</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">11-20</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:85.00%"></i><b>17</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">21 ומעלה</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>20</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">ללא מיקום</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:80.00%"></i><b>16</b></div></div>
+</div>
+</div>
+    <p class="note">מתוך 64 מילות המפתח שבמעקב, ל-24 יש נתוני מיקום בשני החודשים ולכן רק הן ניתנות להשוואה. השאר נכנסו למעקב במהלך התקופה או שטרם נמדד להן מיקום.</p>
+  </div>
+  <div class="card">
+    <h3>המילים שהשתפרו הכי הרבה</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">יוני</th><th style="text-align:center">יולי</th><th style="text-align:center">שיפור</th></tr></thead><tbody><tr><td style="text-align:right">בדיקת מעבדה לאיתור חיידק הליגיונלה</td><td style="text-align:center">נמוך</td><td style="text-align:center">35.0</td><td style="text-align:center">13.8</td><td style="text-align:center"><span class="chip chip-good">▲ 21.2</span></td></tr><tr><td style="text-align:right">דיגום מי שתייה</td><td style="text-align:center">נמוך</td><td style="text-align:center">42.4</td><td style="text-align:center">26.5</td><td style="text-align:center"><span class="chip chip-good">▲ 15.9</span></td></tr><tr><td style="text-align:right">בדיקות מעבדה לבריכה</td><td style="text-align:center">נמוך</td><td style="text-align:center">30.1</td><td style="text-align:center">15.6</td><td style="text-align:center"><span class="chip chip-good">▲ 14.5</span></td></tr><tr><td style="text-align:right">דיגום לגיונלה</td><td style="text-align:center">40</td><td style="text-align:center">21.1</td><td style="text-align:center">9.4</td><td style="text-align:center"><span class="chip chip-good">▲ 11.7</span></td></tr><tr><td style="text-align:right">דיגום ליגיונלה</td><td style="text-align:center">נמוך</td><td style="text-align:center">23.6</td><td style="text-align:center">12.7</td><td style="text-align:center"><span class="chip chip-good">▲ 10.9</span></td></tr><tr><td style="text-align:right">בדיקת מי שתייה מקצועית</td><td style="text-align:center">נמוך</td><td style="text-align:center">40.6</td><td style="text-align:center">30.2</td><td style="text-align:center"><span class="chip chip-good">▲ 10.4</span></td></tr><tr><td style="text-align:right">דיגום לבדיקת לגיונלה</td><td style="text-align:center">נמוך</td><td style="text-align:center">23.7</td><td style="text-align:center">13.4</td><td style="text-align:center"><span class="chip chip-good">▲ 10.3</span></td></tr><tr><td style="text-align:right">דיגום סביבתי</td><td style="text-align:center">40</td><td style="text-align:center">26.0</td><td style="text-align:center">16.0</td><td style="text-align:center"><span class="chip chip-good">▲ 10.0</span></td></tr><tr><td style="text-align:right">דיגום מי שתיה</td><td style="text-align:center">30</td><td style="text-align:center">29.7</td><td style="text-align:center">26.0</td><td style="text-align:center"><span class="chip chip-good">▲ 3.7</span></td></tr><tr><td style="text-align:right">דיגום מי ברז</td><td style="text-align:center">נמוך</td><td style="text-align:center">22.9</td><td style="text-align:center">20.9</td><td style="text-align:center"><span class="chip chip-good">▲ 2.0</span></td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <h3>המילים החזקות ביותר כרגע</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">מיקום ממוצע ביולי</th><th style="text-align:center">המיקום הטוב ביותר</th></tr></thead><tbody><tr><td style="text-align:right">דיגום מי מקוואות</td><td style="text-align:center">נמוך</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">בדיקות IAQ</td><td style="text-align:center">נמוך</td><td style="text-align:center">1.9</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">דיגום מקוואות</td><td style="text-align:center">נמוך</td><td style="text-align:center">2.1</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">שירותי דיגום</td><td style="text-align:center">נמוך</td><td style="text-align:center">2.5</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">בדיקות מעבדה לבריכת שחייה</td><td style="text-align:center">נמוך</td><td style="text-align:center">4.4</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">בדיקות מעבדה לבריכות</td><td style="text-align:center">נמוך</td><td style="text-align:center">8.0</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">בדיקות לגיונלה</td><td style="text-align:center">נמוך</td><td style="text-align:center">9.0</td><td style="text-align:center">9</td></tr><tr><td style="text-align:right">שירותי דיגום מים</td><td style="text-align:center">נמוך</td><td style="text-align:center">9.2</td><td style="text-align:center">4</td></tr><tr><td style="text-align:right">דיגום לגיונלה</td><td style="text-align:center">40</td><td style="text-align:center">9.4</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">ניקוי וחיטוי צנרת</td><td style="text-align:center">נמוך</td><td style="text-align:center">9.5</td><td style="text-align:center">3</td></tr><tr><td style="text-align:right">איתור מזהמים במאגר מים</td><td style="text-align:center">נמוך</td><td style="text-align:center">10.0</td><td style="text-align:center">4</td></tr><tr><td style="text-align:right">בדיקת לגיונלה</td><td style="text-align:center">50</td><td style="text-align:center">10.1</td><td style="text-align:center">9</td></tr><tr><td style="text-align:right">בדיקת ליגיונלה</td><td style="text-align:center">20</td><td style="text-align:center">11.3</td><td style="text-align:center">11</td></tr><tr><td style="text-align:right">בדיקות מיקרוביולוגיות למזון</td><td style="text-align:center">נמוך</td><td style="text-align:center">12.0</td><td style="text-align:center">12</td></tr><tr><td style="text-align:right">דיגום ליגיונלה</td><td style="text-align:center">נמוך</td><td style="text-align:center">12.7</td><td style="text-align:center">4</td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <h3>מילים שדורשות תשומת לב</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">יוני</th><th style="text-align:center">יולי</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">מחלת הליגיונרים</td><td style="text-align:center">340</td><td style="text-align:center">23.0</td><td style="text-align:center">48.6</td><td style="text-align:center"><span class="chip chip-bad">▼ 25.6</span></td></tr><tr><td style="text-align:right">בדיקות מעבדה לאיכות המים</td><td style="text-align:center">נמוך</td><td style="text-align:center">17.0</td><td style="text-align:center">39.2</td><td style="text-align:center"><span class="chip chip-bad">▼ 22.2</span></td></tr><tr><td style="text-align:right">בדיקת מעבדה למי שתיה</td><td style="text-align:center">נמוך</td><td style="text-align:center">10.4</td><td style="text-align:center">20.5</td><td style="text-align:center"><span class="chip chip-bad">▼ 10.1</span></td></tr><tr><td style="text-align:right">איסוף ודיגום מים</td><td style="text-align:center">נמוך</td><td style="text-align:center">7.1</td><td style="text-align:center">14.5</td><td style="text-align:center"><span class="chip chip-bad">▼ 7.4</span></td></tr><tr><td style="text-align:right">בדיקות מעבדה לבריכות</td><td style="text-align:center">נמוך</td><td style="text-align:center">1.1</td><td style="text-align:center">8.0</td><td style="text-align:center"><span class="chip chip-bad">▼ 6.9</span></td></tr></tbody></table>
+  </div>
+</section>
+
+<section>
+  <h2>עשרת העמודים החזקים ביותר</h2>
+  <p class="lead">העמודים שמביאים הכי הרבה כניסות מתוצאות החיפוש של גוגל.</p>
+  <div class="card"><div class="legend"><span class="key key-cur"></span>יולי<span class="key key-prev"></span>יוני</div>
+<div class="bars">
+<div class="bar-row">
+  <div class="bar-name">www.kdigum.co.il/</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>108</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:75.93%"></i><b>82</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.kdigum.co.il/contact/</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:5.56%"></i><b>6</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.00%"></i><b>0</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.kdigum.co.il/בדיקת-מים-חיטוי</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:4.63%"></i><b>5</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.93%"></i><b>1</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.kdigum.co.il/טפסים-להורדה</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:4.63%"></i><b>5</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.93%"></i><b>1</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.kdigum.co.il/post-pool-water-testing/</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:4.63%"></i><b>5</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.00%"></i><b>0</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.kdigum.co.il/legionella/</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:4.63%"></i><b>5</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.00%"></i><b>0</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">www.kdigum.co.il/sector-pools/</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:2.78%"></i><b>3</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.00%"></i><b>0</b></div></div>
+</div>
+</div></div>
+  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">עמוד</th><th style="text-align:center">קליקים יולי</th><th style="text-align:center">קליקים יוני</th><th style="text-align:center">שינוי</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/</span></td><td style="text-align:center">108</td><td style="text-align:center">82</td><td style="text-align:center"><span class="chip chip-good">▲ 32%</span></td><td style="text-align:center">602</td><td style="text-align:center">17.94%</td><td style="text-align:center">14.15</td></tr><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/contact/</span></td><td style="text-align:center">6</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">97</td><td style="text-align:center">6.19%</td><td style="text-align:center">1.78</td></tr><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/בדיקת-מים-חיטוי</span></td><td style="text-align:center">5</td><td style="text-align:center">1</td><td style="text-align:center"><span class="chip chip-good">▲ 400%</span></td><td style="text-align:center">147</td><td style="text-align:center">3.40%</td><td style="text-align:center">16.48</td></tr><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/טפסים-להורדה</span></td><td style="text-align:center">5</td><td style="text-align:center">1</td><td style="text-align:center"><span class="chip chip-good">▲ 400%</span></td><td style="text-align:center">23</td><td style="text-align:center">21.74%</td><td style="text-align:center">7.43</td></tr><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/post-pool-water-testing/</span></td><td style="text-align:center">5</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">185</td><td style="text-align:center">2.70%</td><td style="text-align:center">7.76</td></tr><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/legionella/</span></td><td style="text-align:center">5</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">240</td><td style="text-align:center">2.08%</td><td style="text-align:center">14.22</td></tr><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/sector-pools/</span></td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">163</td><td style="text-align:center">1.84%</td><td style="text-align:center">11.17</td></tr><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/food-sampling/</span></td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">48</td><td style="text-align:center">6.25%</td><td style="text-align:center">27.90</td></tr><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/pool-water/</span></td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">93</td><td style="text-align:center">3.23%</td><td style="text-align:center">7.87</td></tr><tr><td style="text-align:right"><span class="u">www.kdigum.co.il/wastewater-composite/</span></td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">60</td><td style="text-align:center">5.00%</td><td style="text-align:center">23.15</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>ביטויי החיפוש המובילים</h2>
+  <p class="lead">מה גולשים הקלידו בגוגל לפני שהגיעו לאתר.</p>
+  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">ביטוי חיפוש</th><th style="text-align:center">קליקים יולי</th><th style="text-align:center">קליקים יוני</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right">קיסר דיגום</td><td style="text-align:center">80</td><td style="text-align:center">39</td><td style="text-align:center">97</td><td style="text-align:center">82.47%</td><td style="text-align:center">1.07</td></tr><tr><td style="text-align:right">קיסר דיגום בע&quot;מ</td><td style="text-align:center">15</td><td style="text-align:center">18</td><td style="text-align:center">26</td><td style="text-align:center">57.69%</td><td style="text-align:center">1.08</td></tr><tr><td style="text-align:right">דיגום לגיונלה</td><td style="text-align:center">2</td><td style="text-align:center">0</td><td style="text-align:center">21</td><td style="text-align:center">9.52%</td><td style="text-align:center">5.52</td></tr><tr><td style="text-align:right">שירותי דיגום מים</td><td style="text-align:center">1</td><td style="text-align:center">0</td><td style="text-align:center">16</td><td style="text-align:center">6.25%</td><td style="text-align:center">11.19</td></tr><tr><td style="text-align:right">בדיקת לגיונלה</td><td style="text-align:center">1</td><td style="text-align:center">0</td><td style="text-align:center">26</td><td style="text-align:center">3.85%</td><td style="text-align:center">14.81</td></tr><tr><td style="text-align:right">תכנון מעבדות</td><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">12</td><td style="text-align:center">0.00%</td><td style="text-align:center"></td></tr><tr><td style="text-align:right">חברת קיסר</td><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">2</td><td style="text-align:center">0.00%</td><td style="text-align:center"></td></tr><tr><td style="text-align:right">מדידת עכירות</td><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">1</td><td style="text-align:center">0.00%</td><td style="text-align:center"></td></tr><tr><td style="text-align:right">תמונה של מעבדה</td><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">2</td><td style="text-align:center">0.00%</td><td style="text-align:center"></td></tr><tr><td style="text-align:right">מד עכירות המים</td><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">1</td><td style="text-align:center">0.00%</td><td style="text-align:center"></td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>פניות ומעורבות באתר</h2>
+  <p class="lead">אירועי המעורבות שנמדדים באתר - טפסים, לחיצות ופעולות שמעידות על כוונת פנייה.</p>
+  
+  <div class="card">
+    <h3>אירועי מעורבות באתר</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">אירוע באתר</th><th style="text-align:center">יולי</th></tr></thead><tbody><tr><td style="text-align:right">גלילה</td><td style="text-align:center">111</td></tr><tr><td style="text-align:right">קליק</td><td style="text-align:center">40</td></tr><tr><td style="text-align:right">התחלת טופס</td><td style="text-align:center">8</td></tr><tr><td style="text-align:right">הורדת קובץ</td><td style="text-align:center">2</td></tr></tbody></table>
+  </div>
+</section>
+
+<footer>
+  דוח זה הופק עבור קיסר דיגום · kdigum.co.il · 04/08/2026<br>
+  מקורות הנתונים: Google Analytics 4, Google Search Console ומערכת ניטור המיקומים ZEFO.
+</footer>
+</div>
+</body>
+</html>
