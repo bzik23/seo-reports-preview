@@ -139,6 +139,13 @@
   .tbl tbody tr:nth-child(even) { background: #fbfbfc; }
   .u { direction: ltr; display: inline-block; unicode-bidi: embed;
     font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
+  a.u, a.bar-link { text-decoration: none; border-bottom: 1px dotted #c9c8c2;
+    transition: color .15s, border-color .15s; }
+  a.u:hover, a.bar-link:hover { color: var(--brand); border-bottom-color: var(--brand); }
+  a.bar-link { direction: ltr; unicode-bidi: embed; color: inherit; }
+  .site-link { color: inherit; direction: ltr; unicode-bidi: embed;
+    text-decoration: underline; text-underline-offset: 2px;
+    text-decoration-thickness: 1px; }
 
   .summary-list { margin: 0; padding-inline-start: 20px; }
   .summary-list li { margin-bottom: 9px; }
@@ -172,6 +179,7 @@
     .tbl th { white-space: normal; font-size: 9.5px; padding: 0 5px 6px; }
     .tbl td { padding: 4px 5px; overflow-wrap: anywhere; }
     .u { font-size: 9px; }
+    a.u, a.bar-link { border-bottom: none; }
     .bar-name { font-size: 10px; }
     .no-print { display: none; }
   }
@@ -188,7 +196,7 @@
   <div class="cover-in">
     <div>
       <h1>דוח קידום אורגני</h1>
-      <div class="sub">ב.ר.נ. הנדסה · brn-eng.co.il</div>
+      <div class="sub">ב.ר.נ. הנדסה · <a class="site-link" href="https://brn-eng.co.il/" target="_blank" rel="noopener">brn-eng.co.il</a></div>
       <div class="meta">
         תקופת הדוח: <b>1-31 ביולי 2026</b><br>
         השוואה מול חודש <b>יוני</b> · הופק בתאריך 04/08/2026
@@ -341,35 +349,35 @@
   <div class="card"><div class="legend"><span class="key key-cur"></span>יולי<span class="key key-prev"></span>יוני</div>
 <div class="bars">
 <div class="bar-row">
-  <div class="bar-name">/</div>
+  <div class="bar-name"><a class="bar-link" href="https://brn-eng.co.il/" target="_blank" rel="noopener">/</a></div>
   <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:97.44%"></i><b>38</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:100.00%"></i><b>39</b></div></div>
 </div>
 <div class="bar-row">
-  <div class="bar-name">/jacuzzi-constructors-approval/</div>
+  <div class="bar-name"><a class="bar-link" href="https://brn-eng.co.il/jacuzzi-constructors-approval/" target="_blank" rel="noopener">/jacuzzi-constructors-approval/</a></div>
   <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:53.85%"></i><b>21</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:94.87%"></i><b>37</b></div></div>
 </div>
 <div class="bar-row">
-  <div class="bar-name">/wall-cracks-guide/</div>
+  <div class="bar-name"><a class="bar-link" href="https://brn-eng.co.il/wall-cracks-guide/" target="_blank" rel="noopener">/wall-cracks-guide/</a></div>
   <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:28.21%"></i><b>11</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:7.69%"></i><b>3</b></div></div>
 </div>
 <div class="bar-row">
-  <div class="bar-name">/en/standard-safe-room/</div>
+  <div class="bar-name"><a class="bar-link" href="https://brn-eng.co.il/en/standard-safe-room/" target="_blank" rel="noopener">/en/standard-safe-room/</a></div>
   <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:25.64%"></i><b>10</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:15.38%"></i><b>6</b></div></div>
 </div>
 <div class="bar-row">
-  <div class="bar-name">/mezzanine-floor-construction/</div>
+  <div class="bar-name"><a class="bar-link" href="https://brn-eng.co.il/mezzanine-floor-construction/" target="_blank" rel="noopener">/mezzanine-floor-construction/</a></div>
   <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:17.95%"></i><b>7</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:23.08%"></i><b>9</b></div></div>
 </div>
 <div class="bar-row">
-  <div class="bar-name">/pool-structural-design/</div>
+  <div class="bar-name"><a class="bar-link" href="https://brn-eng.co.il/pool-structural-design/" target="_blank" rel="noopener">/pool-structural-design/</a></div>
   <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:12.82%"></i><b>5</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:10.26%"></i><b>4</b></div></div>
 </div>
 <div class="bar-row">
-  <div class="bar-name">/סופרפוזיציה/</div>
+  <div class="bar-name"><a class="bar-link" href="https://brn-eng.co.il/%D7%A1%D7%95%D7%A4%D7%A8%D7%A4%D7%95%D7%96%D7%99%D7%A6%D7%99%D7%94/" target="_blank" rel="noopener">/סופרפוזיציה/</a></div>
   <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:10.26%"></i><b>4</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.00%"></i><b>0</b></div></div>
 </div>
 </div></div>
-  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">עמוד</th><th style="text-align:center">קליקים יולי</th><th style="text-align:center">קליקים יוני</th><th style="text-align:center">שינוי</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right"><span class="u">/</span></td><td style="text-align:center">38</td><td style="text-align:center">39</td><td style="text-align:center"><span class="chip chip-bad">▼ 3%</span></td><td style="text-align:center">1,098</td><td style="text-align:center">3.46%</td><td style="text-align:center">14.36</td></tr><tr><td style="text-align:right"><span class="u">/jacuzzi-constructors-approval/</span></td><td style="text-align:center">21</td><td style="text-align:center">37</td><td style="text-align:center"><span class="chip chip-bad">▼ 43%</span></td><td style="text-align:center">938</td><td style="text-align:center">2.24%</td><td style="text-align:center">6.15</td></tr><tr><td style="text-align:right"><span class="u">/wall-cracks-guide/</span></td><td style="text-align:center">11</td><td style="text-align:center">3</td><td style="text-align:center"><span class="chip chip-good">▲ 267%</span></td><td style="text-align:center">436</td><td style="text-align:center">2.52%</td><td style="text-align:center">7.54</td></tr><tr><td style="text-align:right"><span class="u">/en/standard-safe-room/</span></td><td style="text-align:center">10</td><td style="text-align:center">6</td><td style="text-align:center"><span class="chip chip-good">▲ 67%</span></td><td style="text-align:center">1,158</td><td style="text-align:center">0.86%</td><td style="text-align:center">8.63</td></tr><tr><td style="text-align:right"><span class="u">/mezzanine-floor-construction/</span></td><td style="text-align:center">7</td><td style="text-align:center">9</td><td style="text-align:center"><span class="chip chip-bad">▼ 22%</span></td><td style="text-align:center">455</td><td style="text-align:center">1.54%</td><td style="text-align:center">9.70</td></tr><tr><td style="text-align:right"><span class="u">/pool-structural-design/</span></td><td style="text-align:center">5</td><td style="text-align:center">4</td><td style="text-align:center"><span class="chip chip-good">▲ 25%</span></td><td style="text-align:center">72</td><td style="text-align:center">6.94%</td><td style="text-align:center">38.36</td></tr><tr><td style="text-align:right"><span class="u">/סופרפוזיציה/</span></td><td style="text-align:center">4</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">366</td><td style="text-align:center">1.09%</td><td style="text-align:center">5.48</td></tr><tr><td style="text-align:right"><span class="u">/en/wall-crack-identification-guide/</span></td><td style="text-align:center">4</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">121</td><td style="text-align:center">3.31%</td><td style="text-align:center">11.88</td></tr><tr><td style="text-align:right"><span class="u">/en/mezzanine-floor/</span></td><td style="text-align:center">3</td><td style="text-align:center">1</td><td style="text-align:center"><span class="chip chip-good">▲ 200%</span></td><td style="text-align:center">148</td><td style="text-align:center">2.03%</td><td style="text-align:center">19.55</td></tr><tr><td style="text-align:right"><span class="u">/en/</span></td><td style="text-align:center">3</td><td style="text-align:center">4</td><td style="text-align:center"><span class="chip chip-bad">▼ 25%</span></td><td style="text-align:center">52</td><td style="text-align:center">5.77%</td><td style="text-align:center">8.48</td></tr></tbody></table></div>
+  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">עמוד</th><th style="text-align:center">קליקים יולי</th><th style="text-align:center">קליקים יוני</th><th style="text-align:center">שינוי</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/" target="_blank" rel="noopener">/</a></td><td style="text-align:center">38</td><td style="text-align:center">39</td><td style="text-align:center"><span class="chip chip-bad">▼ 3%</span></td><td style="text-align:center">1,098</td><td style="text-align:center">3.46%</td><td style="text-align:center">14.36</td></tr><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/jacuzzi-constructors-approval/" target="_blank" rel="noopener">/jacuzzi-constructors-approval/</a></td><td style="text-align:center">21</td><td style="text-align:center">37</td><td style="text-align:center"><span class="chip chip-bad">▼ 43%</span></td><td style="text-align:center">938</td><td style="text-align:center">2.24%</td><td style="text-align:center">6.15</td></tr><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/wall-cracks-guide/" target="_blank" rel="noopener">/wall-cracks-guide/</a></td><td style="text-align:center">11</td><td style="text-align:center">3</td><td style="text-align:center"><span class="chip chip-good">▲ 267%</span></td><td style="text-align:center">436</td><td style="text-align:center">2.52%</td><td style="text-align:center">7.54</td></tr><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/en/standard-safe-room/" target="_blank" rel="noopener">/en/standard-safe-room/</a></td><td style="text-align:center">10</td><td style="text-align:center">6</td><td style="text-align:center"><span class="chip chip-good">▲ 67%</span></td><td style="text-align:center">1,158</td><td style="text-align:center">0.86%</td><td style="text-align:center">8.63</td></tr><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/mezzanine-floor-construction/" target="_blank" rel="noopener">/mezzanine-floor-construction/</a></td><td style="text-align:center">7</td><td style="text-align:center">9</td><td style="text-align:center"><span class="chip chip-bad">▼ 22%</span></td><td style="text-align:center">455</td><td style="text-align:center">1.54%</td><td style="text-align:center">9.70</td></tr><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/pool-structural-design/" target="_blank" rel="noopener">/pool-structural-design/</a></td><td style="text-align:center">5</td><td style="text-align:center">4</td><td style="text-align:center"><span class="chip chip-good">▲ 25%</span></td><td style="text-align:center">72</td><td style="text-align:center">6.94%</td><td style="text-align:center">38.36</td></tr><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/%D7%A1%D7%95%D7%A4%D7%A8%D7%A4%D7%95%D7%96%D7%99%D7%A6%D7%99%D7%94/" target="_blank" rel="noopener">/סופרפוזיציה/</a></td><td style="text-align:center">4</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">366</td><td style="text-align:center">1.09%</td><td style="text-align:center">5.48</td></tr><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/en/wall-crack-identification-guide/" target="_blank" rel="noopener">/en/wall-crack-identification-guide/</a></td><td style="text-align:center">4</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">121</td><td style="text-align:center">3.31%</td><td style="text-align:center">11.88</td></tr><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/en/mezzanine-floor/" target="_blank" rel="noopener">/en/mezzanine-floor/</a></td><td style="text-align:center">3</td><td style="text-align:center">1</td><td style="text-align:center"><span class="chip chip-good">▲ 200%</span></td><td style="text-align:center">148</td><td style="text-align:center">2.03%</td><td style="text-align:center">19.55</td></tr><tr><td style="text-align:right"><a class="u" href="https://brn-eng.co.il/en/" target="_blank" rel="noopener">/en/</a></td><td style="text-align:center">3</td><td style="text-align:center">4</td><td style="text-align:center"><span class="chip chip-bad">▼ 25%</span></td><td style="text-align:center">52</td><td style="text-align:center">5.77%</td><td style="text-align:center">8.48</td></tr></tbody></table></div>
 </section>
 
 <section>
@@ -389,7 +397,7 @@
 </section>
 
 <footer>
-  דוח זה הופק עבור ב.ר.נ. הנדסה · brn-eng.co.il · 04/08/2026<br>
+  דוח זה הופק עבור ב.ר.נ. הנדסה · <a class="site-link" href="https://brn-eng.co.il/" target="_blank" rel="noopener">brn-eng.co.il</a> · 04/08/2026<br>
   מקורות הנתונים: Google Analytics 4, Google Search Console ומערכת ניטור המיקומים ZEFO.
 </footer>
 </div>
