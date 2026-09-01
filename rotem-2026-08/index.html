@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>דוח קידום אורגני - רותם אנרגיה - אוגוסט</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #01219A;
+    --brand-deep: #011255;
+    --accent: #FFC400;
+    --prev: #b9b7ae;
+    --good: #0a7d29;
+    --bad: #c0392b;
+    --muted: #8a8880;
+    --ink: #14161c;
+    --ink-2: #4b5060;
+    --surface: #ffffff;
+    --plane: #f6f7f9;
+    --grid: #e7e8ec;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--plane); color: var(--ink);
+    font-family: Heebo, "Segoe UI", Arial, sans-serif;
+    font-size: 15px; line-height: 1.6; -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { max-width: 1000px; margin: 0 auto; padding: 0 28px 64px; }
+
+  /* ---------- cover ---------- */
+  .cover {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+    color: #fff; padding: 56px 0 44px; margin-bottom: 34px;
+  }
+  .cover-in { max-width: 1000px; margin: 0 auto; padding: 0 28px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
+  .cover h1 { font-size: 34px; font-weight: 800; margin: 0 0 6px; letter-spacing: -.5px; }
+  .cover .sub { font-size: 17px; opacity: .82; font-weight: 300; }
+  .cover .meta { margin-top: 22px; font-size: 14px; opacity: .78; }
+  .cover .meta b { font-weight: 500; }
+  .cover-side { display: flex; flex-direction: column; align-items: stretch;
+    gap: 10px; flex: 0 0 auto; }
+  .dl {
+    display: block; text-align: center; text-decoration: none;
+    background: var(--accent); color: #14161c; font-weight: 700; font-size: 13px;
+    padding: 9px 14px; border-radius: 9px;
+  }
+  .dl:hover { filter: brightness(1.08); }
+  .logo-box {
+    background: #fff; border-radius: 14px; padding: 16px 20px;
+    display: flex; align-items: center; min-height: 78px; flex: 0 0 auto;
+  }
+  .logo-box img { max-height: 62px; max-width: 210px; display: block; }
+  .wordmark { color: var(--brand); font-weight: 800; font-size: 22px; }
+  .rule { height: 4px; background: var(--accent); }
+
+  /* ---------- structure ---------- */
+  section { margin: 0 0 40px; }
+  h2 {
+    font-size: 21px; font-weight: 700; margin: 0 0 4px;
+    padding-right: 14px; border-right: 4px solid var(--accent);
+  }
+  .lead { color: var(--ink-2); font-size: 14px; margin: 0 0 18px; padding-right: 18px; }
+  h3 { font-size: 15px; font-weight: 700; margin: 0 0 14px; color: var(--ink); }
+  .card {
+    background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 16px;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-2 > .card { margin-bottom: 0; }
+  .grid-2 + .grid-2 { margin-top: 16px; }
+
+  /* ---------- tiles ---------- */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
+    padding: 18px 18px 16px; position: relative; overflow: hidden;
+  }
+  .tile::before {
+    content: ""; position: absolute; inset-inline-start: 0; top: 0; bottom: 0;
+    width: 4px; background: var(--tile-accent, var(--brand));
+  }
+  .tile-label { font-size: 13px; color: var(--ink-2); font-weight: 500; }
+  .tile-value { font-size: 34px; font-weight: 800; line-height: 1.15; margin: 4px 0 2px;
+    letter-spacing: -1px; }
+  .tile-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tile-sub { font-size: 12px; color: var(--muted); }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 3px; font-size: 12px;
+    font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap;
+  }
+  .chip-good { color: var(--good); background: rgba(10,125,41,.10); }
+  .chip-bad { color: var(--bad); background: rgba(192,57,43,.10); }
+  .chip-flat { color: var(--muted); background: rgba(0,0,0,.05); }
+
+  /* ---------- bars ---------- */
+  .legend { display: flex; align-items: center; gap: 7px; font-size: 12.5px;
+    color: var(--ink-2); margin-bottom: 14px; }
+  .legend .key { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+  .legend .key + .key { margin-inline-start: 12px; }
+  .key-cur { background: var(--brand); }
+  .key-prev { background: var(--prev); }
+  .bars { display: flex; flex-direction: column; gap: 13px; }
+  .bar-row { display: grid; grid-template-columns: minmax(96px, 30%) 1fr;
+    gap: 12px; align-items: center; }
+  .bar-name { font-size: 13px; color: var(--ink-2); overflow-wrap: anywhere; }
+  .bar-track { display: flex; flex-direction: column; gap: 4px; }
+  .bar-line { display: flex; align-items: center; gap: 7px; }
+  .bar-fill { height: 9px; min-width: 2px; display: block;
+    border-start-end-radius: 4px; border-end-end-radius: 4px; }
+  .bar-cur { background: var(--brand); }
+  .bar-prev { background: var(--prev); }
+  .bar-line b { font-size: 12px; font-weight: 600; color: var(--ink-2);
+    font-variant-numeric: tabular-nums; }
+
+  .stack-row { display: grid; grid-template-columns: 56px 1fr; gap: 12px;
+    align-items: center; margin-bottom: 10px; }
+  .stack-label { font-size: 13px; color: var(--ink-2); }
+  .stack { display: flex; height: 26px; border-radius: 6px; overflow: hidden; gap: 2px; }
+  .seg { display: flex; align-items: center; justify-content: center; font-style: normal; }
+  .seg span { font-size: 11.5px; color: #fff; font-weight: 600; font-style: normal; }
+  .stack .seg:last-child span { color: #3d3b34; }
+
+  /* ---------- tables ---------- */
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .tbl th {
+    font-size: 12px; font-weight: 600; color: var(--ink-2); text-transform: none;
+    padding: 0 10px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap;
+  }
+  .tbl td { padding: 9px 10px; border-bottom: 1px solid #f1f2f5;
+    font-variant-numeric: tabular-nums; }
+  .tbl tbody tr:last-child td { border-bottom: none; }
+  .tbl tbody tr:nth-child(even) { background: #fbfbfc; }
+  .u { direction: ltr; display: inline-block; unicode-bidi: isolate;
+    font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
+  /* Path segments never split - a URL broken mid-word reassembles into a 404. */
+  .u .nb { white-space: nowrap; }
+  a.u, a.bar-link { text-decoration: none; border-bottom: 1px dotted #c9c8c2;
+    transition: color .15s, border-color .15s; }
+  a.u:hover, a.bar-link:hover { color: var(--brand); border-bottom-color: var(--brand); }
+  a.bar-link { font-size: inherit; color: inherit; }
+  .site-link { color: inherit; direction: ltr; unicode-bidi: embed;
+    text-decoration: underline; text-underline-offset: 2px;
+    text-decoration-thickness: 1px; }
+
+  .summary-list { margin: 0; padding-inline-start: 20px; }
+  .summary-list li { margin-bottom: 9px; }
+  .note { font-size: 12.5px; color: var(--muted); background: #fbfbf7;
+    border-inline-start: 3px solid var(--accent); padding: 10px 14px;
+    border-radius: 0 8px 8px 0; margin: 14px 0 0; }
+  footer { text-align: center; color: var(--muted); font-size: 12px;
+    padding: 26px 0 0; border-top: 1px solid var(--grid); }
+
+  /* ---------- print ---------- */
+  @page { size: A4; margin: 10mm 8mm; }
+  @media print {
+    body { background: #fff; font-size: 11.5px; }
+    .page { max-width: none; padding: 0 4px 0; }
+    .cover { margin-bottom: 18px; padding: 22px 0 18px; }
+    .cover-in { max-width: none; padding: 0 10px; }
+    .card, .tile, section { break-inside: avoid; page-break-inside: avoid; }
+    section { margin-bottom: 20px; }
+    h2 { font-size: 16px; }
+    .cover h1 { font-size: 26px; }
+    .tile { padding: 12px 12px 10px; }
+    .tile-value { font-size: 24px; }
+    .tile-label { font-size: 11px; }
+    .tile-sub { font-size: 10px; }
+    .tiles { gap: 8px; }
+    .grid-2 { gap: 10px; }
+    .card { padding: 14px 15px; }
+    /* Headers wrap in print: a nowrap 7-column table is what pushes the page
+       wider than A4 and clips the right edge. */
+    .tbl { font-size: 10px; table-layout: fixed; }
+    .tbl th { white-space: normal; font-size: 9.5px; padding: 0 5px 6px; }
+    .tbl td { padding: 4px 5px; overflow-wrap: anywhere; }
+    .u { font-size: 9px; }
+    a.u, a.bar-link { border-bottom: none; }
+    .bar-name { font-size: 10px; }
+    .no-print { display: none; }
+  }
+  @media (max-width: 780px) {
+    .tiles { grid-template-columns: 1fr 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .cover-in { flex-direction: column-reverse; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="cover-in">
+    <div>
+      <h1>דוח קידום אורגני</h1>
+      <div class="sub">רותם אנרגיה · <a class="site-link" href="https://rotemenergy.co.il/" target="_blank" rel="noopener">rotemenergy.co.il</a></div>
+      <div class="meta">
+        תקופת הדוח: <b>1-31 באוגוסט 2026</b><br>
+        השוואה מול חודש <b>יולי</b> · הופק בתאריך 01/09/2026
+      </div>
+    </div>
+    <div class="cover-side">
+      <div class="logo-box"><img src="data:image/png;base64,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" alt="רותם אנרגיה"></div>
+      <a class="dl no-print" href="rotem_2026-08.pdf" download>הורדת הדוח כ-PDF</a>
+    </div>
+  </div>
+</header>
+<div class="rule"></div>
+
+<div class="page">
+
+<section>
+  <h2>תמונת מצב</h2>
+  <p class="lead">המדדים המרכזיים של אוגוסט בהשוואה ליולי.</p>
+  <div class="tiles"><div class="tile" style="--tile-accent:#01219A">
+  <div class="tile-label">כניסות לאתר</div>
+  <div class="tile-value">611</div>
+  <div class="tile-foot"><span class="chip chip-good">▲ 3%</span><span class="tile-sub">לעומת 592 ביולי</span></div>
+</div><div class="tile" style="--tile-accent:#01219A">
+  <div class="tile-label">תנועה אורגנית מגוגל</div>
+  <div class="tile-value">448</div>
+  <div class="tile-foot"><span class="chip chip-bad">▼ 4%</span><span class="tile-sub">לעומת 465 ביולי</span></div>
+</div><div class="tile" style="--tile-accent:#01219A">
+  <div class="tile-label">קליקים מתוצאות החיפוש</div>
+  <div class="tile-value">472</div>
+  <div class="tile-foot"><span class="chip chip-flat">ללא שינוי</span><span class="tile-sub">מתוך 28,075 הופעות</span></div>
+</div><div class="tile" style="--tile-accent:#01219A">
+  <div class="tile-label">פניות מהאתר</div>
+  <div class="tile-value">63</div>
+  <div class="tile-foot"><span class="chip chip-good">▲ 130%</span><span class="tile-sub">23 טפסים לעומת 10 ביולי, ועוד 40 פניות בערוצים שנמדדו ביולי רק מ-19/07</span></div>
+</div></div>
+  <div class="card" style="margin-top:16px">
+    <h3>עיקרי הדברים</h3>
+    <ul class="summary-list"><li>התנועה לאתר עלתה ב-3% לעומת יולי - 611 כניסות מול 592.</li><li>התנועה האורגנית מגוגל, שהיא מנוע הצמיחה המרכזי, ירדה ב-4% והיא מהווה 73% מכלל הכניסות.</li><li>השינוי בסך הכניסות נובע בעיקר מתנועת הפניה (13 ← 35), ולא מהערוץ האורגני.</li><li>הקליקים מתוצאות החיפוש של גוגל נשארו כמעט ללא שינוי (472 מול 473), עם שיפור בשיעור ההקלקה (1.64% ← 1.68%).</li><li>49 מילות מפתח נמצאות בעמוד הראשון של גוגל לעומת 48 ביולי, מתוכן 30 בשלושת המקומות הראשונים.</li><li>התקבלו 63 פניות מהאתר באוגוסט (וואטסאפ, טופס יצירת קשר, חיוג ישיר). בהשוואה ברת-תוקף על ערוץ הטפסים בלבד - 23 לעומת 10 ביולי.</li></ul>
+  </div>
+</section>
+
+<section>
+  <h2>התנועה לאתר</h2>
+  <p class="lead">כמה גולשים הגיעו לאתר ומאיפה הם הגיעו.</p>
+  <div class="grid-2">
+    <div class="card"><h3>כניסות לפי מקור תנועה</h3><div class="legend"><span class="key key-cur"></span>אוגוסט<span class="key key-prev"></span>יולי</div>
+<div class="bars">
+<div class="bar-row">
+  <div class="bar-name">תנועה אורגנית</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:96.34%"></i><b>448</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:100.00%"></i><b>465</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועה ישירה</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:25.16%"></i><b>117</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:23.23%"></i><b>108</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועת הפניה</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:7.53%"></i><b>35</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:2.80%"></i><b>13</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועת AI</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:1.72%"></i><b>8</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.86%"></i><b>4</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועה אורגנית מרשתות חברתיות</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:0.65%"></i><b>3</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.22%"></i><b>1</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">תנועה ממומנת</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:0.00%"></i><b>—</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.22%"></i><b>1</b></div></div>
+</div>
+</div></div>
+    <div class="card"><h3>מדדי תנועה מרכזיים</h3><table class="tbl "><thead><tr><th style="text-align:right">מדד</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">יולי</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">כניסות לאתר</td><td style="text-align:center">611</td><td style="text-align:center">592</td><td style="text-align:center"><span class="chip chip-good">▲ 3%</span></td></tr><tr><td style="text-align:right">מתוכן אורגני מגוגל</td><td style="text-align:center">448</td><td style="text-align:center">465</td><td style="text-align:center"><span class="chip chip-bad">▼ 4%</span></td></tr><tr><td style="text-align:right">משתמשים חדשים</td><td style="text-align:center">473</td><td style="text-align:center">465</td><td style="text-align:center"><span class="chip chip-good">▲ 2%</span></td></tr><tr><td style="text-align:right">שיעור משתמשים חדשים</td><td style="text-align:center">77.4%</td><td style="text-align:center">78.5%</td><td style="text-align:center"></td></tr><tr><td style="text-align:right">שיעור נטישה</td><td style="text-align:center">37.3%</td><td style="text-align:center">40.0%</td><td style="text-align:center"><span class="chip chip-good">▼ 7%</span></td></tr></tbody></table></div>
+  </div>
+  <div class="grid-2">
+    <div class="card"><h3>נייד מול מחשב</h3><div class="stack-row"><div class="stack-label">אוגוסט</div><div class="stack"><i class="seg" style="width:53.27%;background:#01219A"><span>נייד 53%</span></i><i class="seg" style="width:46.73%;background:#b9b7ae"><span>מחשב 47%</span></i></div></div><div class="stack-row"><div class="stack-label">יולי</div><div class="stack"><i class="seg" style="width:53.96%;background:#01219A"><span>נייד 54%</span></i><i class="seg" style="width:46.04%;background:#b9b7ae"><span>מחשב 46%</span></i></div></div></div>
+    <div class="card"><h3>כניסות לפי סוג מכשיר</h3><table class="tbl "><thead><tr><th style="text-align:right">מכשיר</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">יולי</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">נייד וטאבלט</td><td style="text-align:center">326</td><td style="text-align:center">320</td><td style="text-align:center"><span class="chip chip-good">▲ 2%</span></td></tr><tr><td style="text-align:right">מחשב שולחני</td><td style="text-align:center">286</td><td style="text-align:center">273</td><td style="text-align:center"><span class="chip chip-good">▲ 5%</span></td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section>
+  <h2>מיקומים בגוגל</h2>
+  <p class="lead">המיקום מחושב כממוצע חודשי לכל מילת מפתח, על בסיס כל הימים שנמדדו
+  באותו חודש - כך ההשוואה בין החודשים אינה מושפעת ממדידה בודדת ביום מסוים.</p>
+  <div class="tiles"><div class="tile" style="--tile-accent:#01219A">
+  <div class="tile-label">מילות מפתח במעקב</div>
+  <div class="tile-value">83</div>
+  <div class="tile-foot"><span class="tile-sub">סה״כ בניטור שוטף</span></div>
+</div><div class="tile" style="--tile-accent:#01219A">
+  <div class="tile-label">בעמוד הראשון בגוגל</div>
+  <div class="tile-value">49</div>
+  <div class="tile-foot"><span class="chip chip-good">▲ 2%</span><span class="tile-sub">לעומת 48 ביולי</span></div>
+</div><div class="tile" style="--tile-accent:#01219A">
+  <div class="tile-label">בשלושת המקומות הראשונים</div>
+  <div class="tile-value">30</div>
+  <div class="tile-foot"><span class="chip chip-good">▲ 11%</span><span class="tile-sub">לעומת 27 ביולי</span></div>
+</div><div class="tile" style="--tile-accent:#01219A">
+  <div class="tile-label">מילים שהשתפרו</div>
+  <div class="tile-value">34</div>
+  <div class="tile-foot"><span class="tile-sub">מתוך 71 מילים ברות-השוואה</span></div>
+</div></div>
+  <div class="card" style="margin-top:16px">
+    <h3>התפלגות המילים לפי טווח מיקומים</h3>
+    <div class="legend"><span class="key key-cur"></span>אוגוסט<span class="key key-prev"></span>יולי</div>
+<div class="bars">
+<div class="bar-row">
+  <div class="bar-name">1-3</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>30</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:90.00%"></i><b>27</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">4-10</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:63.33%"></i><b>19</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:70.00%"></i><b>21</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">11-20</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:50.00%"></i><b>15</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:40.00%"></i><b>12</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">21 ומעלה</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:40.00%"></i><b>12</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:40.00%"></i><b>12</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">ללא מיקום</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:23.33%"></i><b>7</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:36.67%"></i><b>11</b></div></div>
+</div>
+</div>
+    <p class="note">מתוך 83 מילות המפתח שבמעקב, ל-71 יש נתוני מיקום בשני החודשים ולכן רק הן ניתנות להשוואה. השאר נכנסו למעקב במהלך התקופה או שטרם נמדד להן מיקום.</p>
+  </div>
+  <div class="card"><h3>המילים שהשתפרו הכי הרבה</h3><table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">יולי</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">שיפור</th></tr></thead><tbody><tr><td style="text-align:right">מיזמים סולאריים</td><td style="text-align:center">נמוך</td><td style="text-align:center">26.7</td><td style="text-align:center">10.3</td><td style="text-align:center"><span class="chip chip-good">▲ 16.4</span></td></tr><tr><td style="text-align:right">התקנת פאנל סולארי</td><td style="text-align:center">140</td><td style="text-align:center">28.8</td><td style="text-align:center">14.4</td><td style="text-align:center"><span class="chip chip-good">▲ 14.4</span></td></tr><tr><td style="text-align:right">מערכת אגרו סולארית</td><td style="text-align:center">30</td><td style="text-align:center">15.0</td><td style="text-align:center">2.7</td><td style="text-align:center"><span class="chip chip-good">▲ 12.3</span></td></tr><tr><td style="text-align:right">מערכת סולארית לייצור חשמל</td><td style="text-align:center">10</td><td style="text-align:center">30.3</td><td style="text-align:center">20.7</td><td style="text-align:center"><span class="chip chip-good">▲ 9.6</span></td></tr><tr><td style="text-align:right">מערכת אגרו סולארי לחקלאות</td><td style="text-align:center">30</td><td style="text-align:center">12.0</td><td style="text-align:center">3.6</td><td style="text-align:center"><span class="chip chip-good">▲ 8.4</span></td></tr><tr><td style="text-align:right">הקמת מערכת סולארית ביתית</td><td style="text-align:center">50</td><td style="text-align:center">17.8</td><td style="text-align:center">10.2</td><td style="text-align:center"><span class="chip chip-good">▲ 7.6</span></td></tr><tr><td style="text-align:right">התקנת מערכת סולארית בחדרה</td><td style="text-align:center">30</td><td style="text-align:center">45.6</td><td style="text-align:center">38.3</td><td style="text-align:center"><span class="chip chip-good">▲ 7.3</span></td></tr><tr><td style="text-align:right">אגרו סולאר</td><td style="text-align:center">30</td><td style="text-align:center">12.3</td><td style="text-align:center">6.3</td><td style="text-align:center"><span class="chip chip-good">▲ 6.0</span></td></tr><tr><td style="text-align:right">התקנת גג סולארי</td><td style="text-align:center">70</td><td style="text-align:center">23.6</td><td style="text-align:center">18.3</td><td style="text-align:center"><span class="chip chip-good">▲ 5.3</span></td></tr><tr><td style="text-align:right">אגרו סולאר חקלאות</td><td style="text-align:center">נמוך</td><td style="text-align:center">11.2</td><td style="text-align:center">6.6</td><td style="text-align:center"><span class="chip chip-good">▲ 4.6</span></td></tr></tbody></table></div><div class="card"><h3>המילים החזקות ביותר כרגע</h3><table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">מיקום ממוצע באוגוסט</th><th style="text-align:center">המיקום הטוב ביותר</th></tr></thead><tbody><tr><td style="text-align:right">הקמת מערכת סולארית בקריות</td><td style="text-align:center">40</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">מערכת סולארית בקריות</td><td style="text-align:center">30</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">הקמת מערכת סולארית באזור חיפה</td><td style="text-align:center">30</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">התקנת מערכת סולארית בחיפה</td><td style="text-align:center">40</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">התקנת מערכות סולאריות על גבי חממות</td><td style="text-align:center">40</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">מערכת סולארית על חממה</td><td style="text-align:center">10</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">מערכת סולארית בחממה</td><td style="text-align:center">40</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">רותם אנרגיה</td><td style="text-align:center">260</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">מערכת אגרו סולארית על חממה</td><td style="text-align:center">30</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">השכרת קרקע חקלאית למיזמים סולאריים</td><td style="text-align:center">נמוך</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">קרקע חקלאית למיזם אגרו סולארי</td><td style="text-align:center">נמוך</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">התקנת מערכת סולארית בשרון</td><td style="text-align:center">40</td><td style="text-align:center">1.1</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">התקנת מערכת סולארית באזור השרון</td><td style="text-align:center">30</td><td style="text-align:center">1.2</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">חממה סולארית</td><td style="text-align:center">10</td><td style="text-align:center">1.2</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">פאנל סולארי דו צדדי</td><td style="text-align:center">20</td><td style="text-align:center">1.2</td><td style="text-align:center">1</td></tr></tbody></table></div><div class="card"><h3>מילים שדורשות תשומת לב</h3><table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">יולי</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">מערכת סולארית ביתית קטנה</td><td style="text-align:center">170</td><td style="text-align:center">10.9</td><td style="text-align:center">22.5</td><td style="text-align:center"><span class="chip chip-bad">▼ 11.6</span></td></tr><tr><td style="text-align:right">כדאיות מערכת סולארית ביתית</td><td style="text-align:center">50</td><td style="text-align:center">18.5</td><td style="text-align:center">30.1</td><td style="text-align:center"><span class="chip chip-bad">▼ 11.6</span></td></tr><tr><td style="text-align:right">מערכות סולאריות ביתיות</td><td style="text-align:center">140</td><td style="text-align:center">18.5</td><td style="text-align:center">30.1</td><td style="text-align:center"><span class="chip chip-bad">▼ 11.6</span></td></tr><tr><td style="text-align:right">התקנת מערכת סולארית בכפר יונה</td><td style="text-align:center">30</td><td style="text-align:center">10.1</td><td style="text-align:center">18.6</td><td style="text-align:center"><span class="chip chip-bad">▼ 8.5</span></td></tr><tr><td style="text-align:right">התקנת מערכת סולארית בערבה</td><td style="text-align:center">40</td><td style="text-align:center">9.7</td><td style="text-align:center">17.3</td><td style="text-align:center"><span class="chip chip-bad">▼ 7.6</span></td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>עשרת העמודים החזקים ביותר</h2>
+  <p class="lead">העמודים שמביאים הכי הרבה כניסות מתוצאות החיפוש של גוגל.</p>
+  <div class="card"><div class="legend"><span class="key key-cur"></span>אוגוסט<span class="key key-prev"></span>יולי</div>
+<div class="bars">
+<div class="bar-row">
+  <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://rotemenergy.co.il/solar-calculator/" href="https://rotemenergy.co.il/solar-calculator/" target="_blank" rel="noopener">/<wbr><span class="nb">solar-calculator</span>/<wbr></a></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:91.61%"></i><b>142</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:100.00%"></i><b>155</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://rotemenergy.co.il/" href="https://rotemenergy.co.il/" target="_blank" rel="noopener"><span class="nb">עמוד הבית</span></a></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:75.48%"></i><b>117</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:84.52%"></i><b>131</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://rotemenergy.co.il/agro-solar-suitable-land/" href="https://rotemenergy.co.il/agro-solar-suitable-land/" target="_blank" rel="noopener">/<wbr><span class="nb">agro-solar-suitable-land</span>/<wbr></a></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:14.19%"></i><b>22</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:10.97%"></i><b>17</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://rotemenergy.co.il/%D7%A6%D7%95%D7%95%D7%AA-%D7%A8%D7%95%D7%AA%D7%9D-%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94/" href="https://rotemenergy.co.il/%D7%A6%D7%95%D7%95%D7%AA-%D7%A8%D7%95%D7%AA%D7%9D-%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94/" target="_blank" rel="noopener">/<wbr><span class="nb">צוות-רותם-אנרגיה</span>/<wbr></a></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:13.55%"></i><b>21</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:4.52%"></i><b>7</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://rotemenergy.co.il/bifacial-solar-panels/" href="https://rotemenergy.co.il/bifacial-solar-panels/" target="_blank" rel="noopener">/<wbr><span class="nb">bifacial-solar-panels</span>/<wbr></a></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:9.68%"></i><b>15</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:12.90%"></i><b>20</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://rotemenergy.co.il/solar-system-cleaning/" href="https://rotemenergy.co.il/solar-system-cleaning/" target="_blank" rel="noopener">/<wbr><span class="nb">solar-system-cleaning</span>/<wbr></a></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:8.39%"></i><b>13</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:5.81%"></i><b>9</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://rotemenergy.co.il/greenhouse-solar-guide/" href="https://rotemenergy.co.il/greenhouse-solar-guide/" target="_blank" rel="noopener">/<wbr><span class="nb">greenhouse-solar-guide</span>/<wbr></a></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:7.74%"></i><b>12</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:10.32%"></i><b>16</b></div></div>
+</div>
+</div></div>
+  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">עמוד</th><th style="text-align:center">קליקים אוגוסט</th><th style="text-align:center">קליקים יולי</th><th style="text-align:center">שינוי</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/solar-calculator/" href="https://rotemenergy.co.il/solar-calculator/" target="_blank" rel="noopener">/<wbr><span class="nb">solar-calculator</span>/<wbr></a></td><td style="text-align:center">142</td><td style="text-align:center">155</td><td style="text-align:center"><span class="chip chip-bad">▼ 8%</span></td><td style="text-align:center">7,200</td><td style="text-align:center">1.97%</td><td style="text-align:center">5.71</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/" href="https://rotemenergy.co.il/" target="_blank" rel="noopener"><span class="nb">עמוד הבית</span></a></td><td style="text-align:center">117</td><td style="text-align:center">131</td><td style="text-align:center"><span class="chip chip-bad">▼ 11%</span></td><td style="text-align:center">2,845</td><td style="text-align:center">4.11%</td><td style="text-align:center">8.38</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/agro-solar-suitable-land/" href="https://rotemenergy.co.il/agro-solar-suitable-land/" target="_blank" rel="noopener">/<wbr><span class="nb">agro-solar-suitable-land</span>/<wbr></a></td><td style="text-align:center">22</td><td style="text-align:center">17</td><td style="text-align:center"><span class="chip chip-good">▲ 29%</span></td><td style="text-align:center">1,218</td><td style="text-align:center">1.81%</td><td style="text-align:center">10.13</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/%D7%A6%D7%95%D7%95%D7%AA-%D7%A8%D7%95%D7%AA%D7%9D-%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94/" href="https://rotemenergy.co.il/%D7%A6%D7%95%D7%95%D7%AA-%D7%A8%D7%95%D7%AA%D7%9D-%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94/" target="_blank" rel="noopener">/<wbr><span class="nb">צוות-רותם-אנרגיה</span>/<wbr></a></td><td style="text-align:center">21</td><td style="text-align:center">7</td><td style="text-align:center"><span class="chip chip-good">▲ 200%</span></td><td style="text-align:center">451</td><td style="text-align:center">4.66%</td><td style="text-align:center">6.09</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/bifacial-solar-panels/" href="https://rotemenergy.co.il/bifacial-solar-panels/" target="_blank" rel="noopener">/<wbr><span class="nb">bifacial-solar-panels</span>/<wbr></a></td><td style="text-align:center">15</td><td style="text-align:center">20</td><td style="text-align:center"><span class="chip chip-bad">▼ 25%</span></td><td style="text-align:center">562</td><td style="text-align:center">2.67%</td><td style="text-align:center">9.58</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/solar-system-cleaning/" href="https://rotemenergy.co.il/solar-system-cleaning/" target="_blank" rel="noopener">/<wbr><span class="nb">solar-system-cleaning</span>/<wbr></a></td><td style="text-align:center">13</td><td style="text-align:center">9</td><td style="text-align:center"><span class="chip chip-good">▲ 44%</span></td><td style="text-align:center">1,434</td><td style="text-align:center">0.91%</td><td style="text-align:center">13.63</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/greenhouse-solar-guide/" href="https://rotemenergy.co.il/greenhouse-solar-guide/" target="_blank" rel="noopener">/<wbr><span class="nb">greenhouse-solar-guide</span>/<wbr></a></td><td style="text-align:center">12</td><td style="text-align:center">16</td><td style="text-align:center"><span class="chip chip-bad">▼ 25%</span></td><td style="text-align:center">640</td><td style="text-align:center">1.88%</td><td style="text-align:center">5.72</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/agro-solar-info/" href="https://rotemenergy.co.il/agro-solar-info/" target="_blank" rel="noopener">/<wbr><span class="nb">agro-solar-info</span>/<wbr></a></td><td style="text-align:center">12</td><td style="text-align:center">0</td><td style="text-align:center"><span class="chip chip-good">חדש</span></td><td style="text-align:center">1,255</td><td style="text-align:center">0.96%</td><td style="text-align:center">10.31</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/wp-content/uploads/2025/06/%D7%A8%D7%A9%D7%99%D7%9E%D7%AA-%D7%A2%D7%A8%D7%99%D7%9D-%D7%9C%D7%A4%D7%A8%D7%9E%D7%99%D7%94-%D7%90%D7%95%D7%A8%D7%91%D7%A0%D7%99%D7%AA-%D7%A8%D7%95%D7%AA%D7%9D-%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94.pdf" href="https://rotemenergy.co.il/wp-content/uploads/2025/06/%D7%A8%D7%A9%D7%99%D7%9E%D7%AA-%D7%A2%D7%A8%D7%99%D7%9D-%D7%9C%D7%A4%D7%A8%D7%9E%D7%99%D7%94-%D7%90%D7%95%D7%A8%D7%91%D7%A0%D7%99%D7%AA-%D7%A8%D7%95%D7%AA%D7%9D-%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94.pdf" target="_blank" rel="noopener">/<wbr><span class="nb">wp-content</span>/<wbr><span class="nb">uploads</span>/<wbr><span class="nb">2025</span>/<wbr><span class="nb">06</span>/<wbr><span class="nb">רשימת-ערים-לפרמיה-אורבנית-רותם-אנרגיה.pdf</span></a></td><td style="text-align:center">11</td><td style="text-align:center">20</td><td style="text-align:center"><span class="chip chip-bad">▼ 45%</span></td><td style="text-align:center">162</td><td style="text-align:center">6.79%</td><td style="text-align:center">9.54</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/installing-solar-system/" href="https://rotemenergy.co.il/installing-solar-system/" target="_blank" rel="noopener">/<wbr><span class="nb">installing-solar-system</span>/<wbr></a></td><td style="text-align:center">10</td><td style="text-align:center">8</td><td style="text-align:center"><span class="chip chip-good">▲ 25%</span></td><td style="text-align:center">2,243</td><td style="text-align:center">0.45%</td><td style="text-align:center">15.87</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>ביטויי החיפוש המובילים</h2>
+  <p class="lead">מה גולשים הקלידו בגוגל לפני שהגיעו לאתר.</p>
+  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">ביטוי חיפוש</th><th style="text-align:center">קליקים אוגוסט</th><th style="text-align:center">קליקים יולי</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right">רותם אנרגיה</td><td style="text-align:center">89</td><td style="text-align:center">102</td><td style="text-align:center">287</td><td style="text-align:center">31.01%</td><td style="text-align:center">2.30</td></tr><tr><td style="text-align:right">מחשבון גג סולארי</td><td style="text-align:center">8</td><td style="text-align:center">6</td><td style="text-align:center">441</td><td style="text-align:center">1.81%</td><td style="text-align:center">4.93</td></tr><tr><td style="text-align:right">מחשבון סולארי</td><td style="text-align:center">8</td><td style="text-align:center">13</td><td style="text-align:center">212</td><td style="text-align:center">3.77%</td><td style="text-align:center">4.77</td></tr><tr><td style="text-align:right">מחשבון הגגות</td><td style="text-align:center">6</td><td style="text-align:center">12</td><td style="text-align:center">406</td><td style="text-align:center">1.48%</td><td style="text-align:center">3.26</td></tr><tr><td style="text-align:right">מחשבון סולארי מסחרי</td><td style="text-align:center">6</td><td style="text-align:center">1</td><td style="text-align:center">37</td><td style="text-align:center">16.22%</td><td style="text-align:center">3.30</td></tr><tr><td style="text-align:right">מחשבון מערכת סולארית</td><td style="text-align:center">5</td><td style="text-align:center">1</td><td style="text-align:center">153</td><td style="text-align:center">3.27%</td><td style="text-align:center">4.73</td></tr><tr><td style="text-align:right">מערכת אגרו וולטאית</td><td style="text-align:center">5</td><td style="text-align:center">0</td><td style="text-align:center">35</td><td style="text-align:center">14.29%</td><td style="text-align:center">8.34</td></tr><tr><td style="text-align:right">מערכת סולארית ביתית קטנה</td><td style="text-align:center">4</td><td style="text-align:center">3</td><td style="text-align:center">128</td><td style="text-align:center">3.13%</td><td style="text-align:center">3.97</td></tr><tr><td style="text-align:right">פרמיה אורבנית רשימת ערים</td><td style="text-align:center">3</td><td style="text-align:center">1</td><td style="text-align:center">37</td><td style="text-align:center">8.11%</td><td style="text-align:center">3.57</td></tr><tr><td style="text-align:right">אגרו סולארי</td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center">299</td><td style="text-align:center">1.00%</td><td style="text-align:center">10.77</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>פניות ומעורבות באתר</h2>
+  <p class="lead">כמה פניות התקבלו, דרך אילו ערוצים ומאיזה מכשיר.</p>
+  
+<div class="grid-2">
+  <div class="card">
+    <h3>פניות לפי ערוץ</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">ערוץ הפנייה</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">יולי</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">וואטסאפ</td><td style="text-align:center">25</td><td style="text-align:center">8</td><td style="text-align:center"><span class="chip chip-flat">מדידה חלקית מ-19/07</span></td></tr><tr><td style="text-align:right">טופס יצירת קשר</td><td style="text-align:center">23</td><td style="text-align:center">10</td><td style="text-align:center"><span class="chip chip-good">▲ 130%</span></td></tr><tr><td style="text-align:right">חיוג ישיר</td><td style="text-align:center">15</td><td style="text-align:center">5</td><td style="text-align:center"><span class="chip chip-flat">מדידה חלקית מ-19/07</span></td></tr></tbody></table>
+    <p class="note">מדידת לחיצות וואטסאפ/חיוג הופעלה ב-19/07/2026; נתוני טפסים יובאו רטרואקטיבית 90 יום ולכן ברי-השוואה מול יוני.</p>
+  </div>
+  <div class="card">
+    <h3>פניות לפי מכשיר</h3>
+    <div class="legend"><span class="key key-cur"></span>אוגוסט<span class="key key-prev"></span>יולי</div>
+<div class="bars">
+<div class="bar-row">
+  <div class="bar-name">נייד</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>45</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:37.78%"></i><b>17</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">מחשב</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:40.00%"></i><b>18</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:13.33%"></i><b>6</b></div></div>
+</div>
+</div>
+  </div>
+</div>
+<div class="grid-2">
+  <div class="card"><h3>מאיפה הגיע הגולש שפנה</h3><table class="tbl "><thead><tr><th style="text-align:right">מקור הגולש שפנה</th><th style="text-align:center">פניות</th></tr></thead><tbody><tr><td style="text-align:right">גוגל (אורגני)</td><td style="text-align:center">33</td></tr><tr><td style="text-align:right">ישיר</td><td style="text-align:center">9</td></tr><tr><td style="text-align:right">ניווט באתר</td><td style="text-align:center">9</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" href="https://chatgpt.com/" target="_blank" rel="noopener">chatgpt.com</a></td><td style="text-align:center">5</td></tr><tr><td style="text-align:right">ig</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">פייסבוק</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">localhost</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">לא ידוע</td><td style="text-align:center">1</td></tr></tbody></table></div>
+  <div class="card"><h3>העמודים שמייצרים פניות</h3><table class="tbl "><thead><tr><th style="text-align:right">העמוד שממנו פנו</th><th style="text-align:center">פניות</th></tr></thead><tbody><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/contact/" href="https://rotemenergy.co.il/contact/" target="_blank" rel="noopener">/<wbr><span class="nb">contact</span>/<wbr></a></td><td style="text-align:center">18</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/" href="https://rotemenergy.co.il/" target="_blank" rel="noopener">/<wbr></a></td><td style="text-align:center">8</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/agro-solar-suitable-land/" href="https://rotemenergy.co.il/agro-solar-suitable-land/" target="_blank" rel="noopener">/<wbr><span class="nb">agro-solar-suitable-land</span>/<wbr></a></td><td style="text-align:center">7</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/solar-calculator/" href="https://rotemenergy.co.il/solar-calculator/" target="_blank" rel="noopener">/<wbr><span class="nb">solar-calculator</span>/<wbr></a></td><td style="text-align:center">4</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/agricultural-land-lease/" href="https://rotemenergy.co.il/agricultural-land-lease/" target="_blank" rel="noopener">/<wbr><span class="nb">agricultural-land-lease</span>/<wbr></a></td><td style="text-align:center">4</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/solar-system-haifa-area/" href="https://rotemenergy.co.il/solar-system-haifa-area/" target="_blank" rel="noopener">/<wbr><span class="nb">solar-system-haifa-area</span>/<wbr></a></td><td style="text-align:center">3</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/installing-solar-system/" href="https://rotemenergy.co.il/installing-solar-system/" target="_blank" rel="noopener">/<wbr><span class="nb">installing-solar-system</span>/<wbr></a></td><td style="text-align:center">3</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://rotemenergy.co.il/thanks/" href="https://rotemenergy.co.il/thanks/" target="_blank" rel="noopener">/<wbr><span class="nb">thanks</span>/<wbr></a></td><td style="text-align:center">3</td></tr></tbody></table></div>
+</div>
+  <div class="card">
+    <h3>אירועי מעורבות באתר</h3>
+    <table class="tbl "><thead><tr><th style="text-align:right">אירוע באתר</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">יולי</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">גלילה</td><td style="text-align:center">217</td><td style="text-align:center">194</td><td style="text-align:center"><span class="chip chip-good">▲ 12%</span></td></tr><tr><td style="text-align:right">התחלת טופס</td><td style="text-align:center">208</td><td style="text-align:center">206</td><td style="text-align:center"><span class="chip chip-good">▲ 1%</span></td></tr><tr><td style="text-align:right">קליק</td><td style="text-align:center">65</td><td style="text-align:center">44</td><td style="text-align:center"><span class="chip chip-good">▲ 48%</span></td></tr><tr><td style="text-align:right">מעורבות וידאו</td><td style="text-align:center">51</td><td style="text-align:center">30</td><td style="text-align:center"><span class="chip chip-good">▲ 70%</span></td></tr><tr><td style="text-align:right">ליד נשלח</td><td style="text-align:center">46</td><td style="text-align:center">19</td><td style="text-align:center"><span class="chip chip-good">▲ 142%</span></td></tr><tr><td style="text-align:right">הורדת קובץ</td><td style="text-align:center">5</td><td style="text-align:center">4</td><td style="text-align:center"><span class="chip chip-good">▲ 25%</span></td></tr></tbody></table>
+  </div>
+</section>
+
+<footer>
+  דוח זה הופק עבור רותם אנרגיה · <a class="site-link" href="https://rotemenergy.co.il/" target="_blank" rel="noopener">rotemenergy.co.il</a> · 01/09/2026<br>
+  מקורות הנתונים: Google Analytics 4, Google Search Console ומערכת ניטור המיקומים ZEFO.
+</footer>
+</div>
+</body>
+</html>
