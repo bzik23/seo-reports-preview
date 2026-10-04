@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>דוח קידום אורגני - אולסי מערכות - ספטמבר</title>
+<title>דוח קידום אורגני וממומן - אולסי מערכות - ספטמבר</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -67,6 +67,9 @@
   }
   .lead { color: var(--ink-2); font-size: 14px; margin: 0 0 18px; padding-right: 18px; }
   h3 { font-size: 15px; font-weight: 700; margin: 0 0 14px; color: var(--ink); }
+  .sub-h { margin: 22px 0 6px; padding-right: 18px; }
+  .sub-h + .lead { margin-bottom: 12px; }
+  .sub-h ~ .tiles { margin-bottom: 16px; }
   .card {
     background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
     padding: 20px 22px; margin-bottom: 16px;
@@ -140,7 +143,7 @@
   .u { direction: ltr; display: inline-block; unicode-bidi: isolate;
     font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
   /* Path segments never split - a URL broken mid-word reassembles into a 404. */
-  .u .nb { white-space: nowrap; }
+  .u .nb, bdi.nb { white-space: nowrap; }
   a.u, a.bar-link { text-decoration: none; border-bottom: 1px dotted #c9c8c2;
     transition: color .15s, border-color .15s; }
   a.u:hover, a.bar-link:hover { color: var(--brand); border-bottom-color: var(--brand); }
@@ -165,6 +168,11 @@
     .cover { margin-bottom: 18px; padding: 22px 0 18px; }
     .cover-in { max-width: none; padding: 0 10px; }
     .card, .tile, section { break-inside: avoid; page-break-inside: avoid; }
+    /* A table longer than a page has to be allowed to split - between rows. */
+    .card.card-long { break-inside: auto; page-break-inside: auto; }
+    .card-long tr { break-inside: avoid; page-break-inside: avoid; }
+    /* Fixed layout splits the width evenly; a keyword needs more than a number. */
+    .tbl-kw th:first-child { width: 34%; }
     section { margin-bottom: 20px; }
     h2 { font-size: 16px; }
     .cover h1 { font-size: 26px; }
@@ -197,7 +205,7 @@
 <header class="cover">
   <div class="cover-in">
     <div>
-      <h1>דוח קידום אורגני</h1>
+      <h1>דוח קידום אורגני וממומן</h1>
       <div class="sub">אולסי מערכות · <a class="site-link" href="https://olsi.co.il/" target="_blank" rel="noopener">olsi.co.il</a></div>
       <div class="meta">
         תקופת הדוח: <b>1-30 בספטמבר 2026</b><br>
@@ -236,7 +244,7 @@
 </div></div>
   <div class="card" style="margin-top:16px">
     <h3>עיקרי הדברים</h3>
-    <ul class="summary-list"><li>התנועה לאתר ירדה ב-29% לעומת אוגוסט - 1,750 כניסות מול 2,464.</li><li>התנועה האורגנית מגוגל, שהיא מנוע הצמיחה המרכזי, צמחה ב-37% והיא מהווה 7% מכלל הכניסות.</li><li>השינוי בסך הכניסות נובע בעיקר מתנועה ממומנת (2,010 ← 1,438), ולא מהערוץ האורגני.</li><li>הקליקים מתוצאות החיפוש של גוגל ירדו ב-45% (36 מול 65), ושיעור ההקלקה ירד (0.35% ← 0.22%).</li><li>24 מילות מפתח נמצאות בעמוד הראשון של גוגל לעומת 21 באוגוסט, מתוכן 14 בשלושת המקומות הראשונים.</li><li>נרשמו 27 אירועי "ליד נשלח" בספטמבר לעומת 8 באוגוסט.</li></ul>
+    <ul class="summary-list"><li>התנועה לאתר ירדה ב-29% לעומת אוגוסט - 1,750 כניסות מול 2,464.</li><li>התנועה האורגנית מגוגל, שהיא מנוע הצמיחה המרכזי, צמחה ב-37% והיא מהווה 7% מכלל הכניסות.</li><li>השינוי בסך הכניסות נובע בעיקר מתנועה ממומנת (2,010 ← 1,438), ולא מהערוץ האורגני.</li><li>הקליקים מתוצאות החיפוש של גוגל ירדו ב-45% (36 מול 65), ושיעור ההקלקה ירד (0.35% ← 0.22%).</li><li>24 מילות מפתח נמצאות בעמוד הראשון של גוגל לעומת 21 באוגוסט, מתוכן 14 בשלושת המקומות הראשונים.</li><li>בקידום הממומן בגוגל התקבלו 333 קליקים ו-25 המרות בעלות כוללת של 4,007 ₪ (160.26 ₪ להמרה).</li><li>נרשמו 27 אירועי "ליד נשלח" בספטמבר לעומת 8 באוגוסט.</li></ul>
   </div>
 </section>
 
@@ -374,6 +382,34 @@
 </section>
 
 <section>
+  <h2>קידום ממומן בגוגל</h2>
+  <p class="lead">תוצאות קמפייני החיפוש הממומן ב-Google Ads בספטמבר: כמה הושקע, כמה
+  גולשים הקליקו על המודעות, וכמה המרות התקבלו.</p>
+  <div class="tiles"><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">עלות כוללת</div>
+  <div class="tile-value">4,007 ₪</div>
+  <div class="tile-foot"><span class="tile-sub">שני הקמפיינים הפעילים</span></div>
+</div><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">קליקים על המודעות</div>
+  <div class="tile-value">333</div>
+  <div class="tile-foot"><span class="tile-sub">מתוך 4,404 חשיפות</span></div>
+</div><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">עלות ממוצעת לקליק</div>
+  <div class="tile-value">12.03 ₪</div>
+  <div class="tile-foot"><span class="tile-sub">שיעור הקלקה 7.56%</span></div>
+</div><div class="tile" style="--tile-accent:#C2185B">
+  <div class="tile-label">המרות</div>
+  <div class="tile-value">25</div>
+  <div class="tile-foot"><span class="tile-sub">עלות להמרה 160.26 ₪</span></div>
+</div></div>
+  <div class="card" style="margin-top:16px">
+    <h3>פירוט לפי קמפיין</h3>
+    <table class="tbl tbl-kw"><thead><tr><th style="text-align:right">קמפיין</th><th style="text-align:center">עלות</th><th style="text-align:center">חשיפות</th><th style="text-align:center">קליקים</th><th style="text-align:center">שיעור הקלקה</th><th style="text-align:center">עלות לקליק</th><th style="text-align:center">המרות</th><th style="text-align:center">עלות להמרה</th></tr></thead><tbody><tr><td style="text-align:right">פיתוח תוכנה בהתאמה אישית</td><td style="text-align:center">3,708 ₪</td><td style="text-align:center">3,546</td><td style="text-align:center">291</td><td style="text-align:center">8.21%</td><td style="text-align:center">12.74 ₪</td><td style="text-align:center">25</td><td style="text-align:center">148.30 ₪</td></tr><tr><td style="text-align:right">ניהול מלאי ופרויקטים</td><td style="text-align:center">299 ₪</td><td style="text-align:center">858</td><td style="text-align:center">42</td><td style="text-align:center">4.90%</td><td style="text-align:center">7.12 ₪</td><td style="text-align:center">0</td><td style="text-align:center">—</td></tr></tbody></table>
+    
+  </div>
+</section>
+
+<section>
   <h2>לידים ופניות מהאתר</h2>
   <p class="lead">הפניות שנמדדו באתר - טפסים ולחיצות על וואטסאפ וחיוג. פעולות גלישה כמו גלילה, קליקים יוצאים והורדות אינן נספרות כאן.</p>
   
@@ -385,7 +421,7 @@
 
 <footer>
   דוח זה הופק עבור אולסי מערכות · <a class="site-link" href="https://olsi.co.il/" target="_blank" rel="noopener">olsi.co.il</a> · 03/10/2026<br>
-  מקורות הנתונים: Google Analytics 4, Google Search Console ומערכת ניטור המיקומים ZEFO.
+  מקורות הנתונים: Google Analytics 4, Google Search Console, Google Ads ומערכת ניטור המיקומים ZEFO.
 </footer>
 </div>
 </body>
