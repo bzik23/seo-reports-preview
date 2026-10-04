@@ -67,6 +67,9 @@
   }
   .lead { color: var(--ink-2); font-size: 14px; margin: 0 0 18px; padding-right: 18px; }
   h3 { font-size: 15px; font-weight: 700; margin: 0 0 14px; color: var(--ink); }
+  .sub-h { margin: 22px 0 6px; padding-right: 18px; }
+  .sub-h + .lead { margin-bottom: 12px; }
+  .sub-h ~ .tiles { margin-bottom: 16px; }
   .card {
     background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
     padding: 20px 22px; margin-bottom: 16px;
@@ -140,7 +143,7 @@
   .u { direction: ltr; display: inline-block; unicode-bidi: isolate;
     font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
   /* Path segments never split - a URL broken mid-word reassembles into a 404. */
-  .u .nb { white-space: nowrap; }
+  .u .nb, bdi.nb { white-space: nowrap; }
   a.u, a.bar-link { text-decoration: none; border-bottom: 1px dotted #c9c8c2;
     transition: color .15s, border-color .15s; }
   a.u:hover, a.bar-link:hover { color: var(--brand); border-bottom-color: var(--brand); }
@@ -165,6 +168,11 @@
     .cover { margin-bottom: 18px; padding: 22px 0 18px; }
     .cover-in { max-width: none; padding: 0 10px; }
     .card, .tile, section { break-inside: avoid; page-break-inside: avoid; }
+    /* A table longer than a page has to be allowed to split - between rows. */
+    .card.card-long { break-inside: auto; page-break-inside: auto; }
+    .card-long tr { break-inside: avoid; page-break-inside: avoid; }
+    /* Fixed layout splits the width evenly; a keyword needs more than a number. */
+    .tbl-kw th:first-child { width: 34%; }
     section { margin-bottom: 20px; }
     h2 { font-size: 16px; }
     .cover h1 { font-size: 26px; }
@@ -201,7 +209,7 @@
       <div class="sub">קיסר דיגום · <a class="site-link" href="https://kdigum.co.il/" target="_blank" rel="noopener">kdigum.co.il</a></div>
       <div class="meta">
         תקופת הדוח: <b>1-30 בספטמבר 2026</b><br>
-        נתוני <b>ספטמבר</b> בלבד · הופק בתאריך 03/10/2026
+        נתוני <b>ספטמבר</b> בלבד · הופק בתאריך 04/10/2026
       </div>
     </div>
     <div class="cover-side">
@@ -230,13 +238,13 @@
   <div class="tile-value">121</div>
   <div class="tile-foot"><span class="tile-sub">מתוך 12,616 הופעות</span></div>
 </div><div class="tile" style="--tile-accent:#1F6E27">
-  <div class="tile-label">התחלת טופס</div>
-  <div class="tile-value">2</div>
+  <div class="tile-label">פניות מהאתר</div>
+  <div class="tile-value">28</div>
   <div class="tile-foot"><span class="tile-sub">סה״כ בספטמבר</span></div>
 </div></div>
   <div class="card" style="margin-top:16px">
     <h3>עיקרי הדברים</h3>
-    <ul class="summary-list"><li>הדוח מציג את נתוני ספטמבר בלבד, ללא השוואה לחודש קודם.</li><li>בספטמבר נרשמו 292 כניסות לאתר, מתוכן 137 מחיפוש אורגני בגוגל.</li><li>התקבלו 121 קליקים מתוצאות החיפוש של גוגל, מתוך 12,616 הופעות.</li><li>14 מתוך 64 מילות המפתח שבמעקב נמצאות בעמוד הראשון של גוגל, מתוכן 7 בשלושת המקומות הראשונים.</li><li>נרשמו 2 אירועי "התחלת טופס" בספטמבר.</li></ul>
+    <ul class="summary-list"><li>הדוח מציג את נתוני ספטמבר בלבד, ללא השוואה לחודש קודם.</li><li>בספטמבר נרשמו 292 כניסות לאתר, מתוכן 137 מחיפוש אורגני בגוגל.</li><li>התקבלו 121 קליקים מתוצאות החיפוש של גוגל, מתוך 12,616 הופעות.</li><li>14 מתוך 64 מילות המפתח שבמעקב נמצאות בעמוד הראשון של גוגל, מתוכן 7 בשלושת המקומות הראשונים.</li><li>התקבלו 28 פניות מהאתר בספטמבר (חיוג ישיר 19 · וואטסאפ 7 · טופס יצירת קשר 2).</li><li>מקורות ההגעה של הפונים: גוגל (אורגני) 21 · ניווט באתר 4 · chatgpt.com 2 · ישיר 1.</li></ul>
   </div>
 </section>
 
@@ -368,16 +376,52 @@
 
 <section>
   <h2>לידים ופניות מהאתר</h2>
-  <p class="lead">הפניות שנמדדו באתר - טפסים ולחיצות על וואטסאפ וחיוג. פעולות גלישה כמו גלילה, קליקים יוצאים והורדות אינן נספרות כאן.</p>
-  
+  <p class="lead">כמה פניות התקבלו, דרך אילו ערוצים ומאיזה מכשיר.</p>
+  <div class="tiles"><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">סה״כ פניות מהאתר</div>
+  <div class="tile-value">28</div>
+  <div class="tile-foot"><span class="tile-sub">חיוג ישיר 19 · וואטסאפ 7 · טופס יצירת קשר 2</span></div>
+</div><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">חיוג ישיר</div>
+  <div class="tile-value">19</div>
+  <div class="tile-foot"><span class="tile-sub">גוגל (אורגני) 16 · ניווט באתר 2</span></div>
+</div><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">וואטסאפ</div>
+  <div class="tile-value">7</div>
+  <div class="tile-foot"><span class="tile-sub">גוגל (אורגני) 4 · ניווט באתר 2</span></div>
+</div><div class="tile" style="--tile-accent:#1F6E27">
+  <div class="tile-label">טופס יצירת קשר</div>
+  <div class="tile-value">2</div>
+  <div class="tile-foot"><span class="tile-sub">ישיר 1 · גוגל (אורגני) 1</span></div>
+</div></div><div style="height:16px"></div>
+<div class="grid-2">
   <div class="card">
     <h3>פניות לפי סוג</h3>
-    <table class="tbl "><thead><tr><th style="text-align:right">סוג הפנייה</th><th style="text-align:center">ספטמבר</th></tr></thead><tbody><tr><td style="text-align:right">התחלת טופס</td><td style="text-align:center">2</td></tr></tbody></table>
+    <table class="tbl "><thead><tr><th style="text-align:right">סוג הפנייה</th><th style="text-align:center">ספטמבר</th></tr></thead><tbody><tr><td style="text-align:right">חיוג ישיר</td><td style="text-align:center">19</td></tr><tr><td style="text-align:right">וואטסאפ</td><td style="text-align:center">7</td></tr><tr><td style="text-align:right">טופס יצירת קשר</td><td style="text-align:center">2</td></tr></tbody></table>
+    
   </div>
+  <div class="card">
+    <h3>פניות לפי מכשיר</h3>
+    <div class="bars">
+<div class="bar-row">
+  <div class="bar-name">נייד</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>23</b></div></div>
+</div>
+<div class="bar-row">
+  <div class="bar-name">מחשב</div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:21.74%"></i><b>5</b></div></div>
+</div>
+</div>
+  </div>
+</div>
+<div class="grid-2">
+  <div class="card"><h3>מאיפה הגיע הגולש שפנה</h3><table class="tbl "><thead><tr><th style="text-align:right">מקור הגולש שפנה</th><th style="text-align:center">פניות</th></tr></thead><tbody><tr><td style="text-align:right">גוגל (אורגני)</td><td style="text-align:center">21</td></tr><tr><td style="text-align:right">ניווט באתר</td><td style="text-align:center">4</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" href="https://chatgpt.com/" target="_blank" rel="noopener">chatgpt.com</a></td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">ישיר</td><td style="text-align:center">1</td></tr></tbody></table></div>
+  <div class="card"><h3>העמודים שמייצרים פניות</h3><table class="tbl "><thead><tr><th style="text-align:right">העמוד שממנו פנו</th><th style="text-align:center">פניות</th></tr></thead><tbody><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://kdigum.co.il/" href="https://kdigum.co.il/" target="_blank" rel="noopener">/<wbr></a></td><td style="text-align:center">9</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://kdigum.co.il/contact/" href="https://kdigum.co.il/contact/" target="_blank" rel="noopener">/<wbr><span class="nb">contact</span>/<wbr></a></td><td style="text-align:center">6</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://kdigum.co.il/wastewater-industry/" href="https://kdigum.co.il/wastewater-industry/" target="_blank" rel="noopener">/<wbr><span class="nb">wastewater-industry</span>/<wbr></a></td><td style="text-align:center">3</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://kdigum.co.il/water-sampling/" href="https://kdigum.co.il/water-sampling/" target="_blank" rel="noopener">/<wbr><span class="nb">water-sampling</span>/<wbr></a></td><td style="text-align:center">3</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://kdigum.co.il/about/" href="https://kdigum.co.il/about/" target="_blank" rel="noopener">/<wbr><span class="nb">about</span>/<wbr></a></td><td style="text-align:center">2</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://kdigum.co.il/disinfection-pipes/" href="https://kdigum.co.il/disinfection-pipes/" target="_blank" rel="noopener">/<wbr><span class="nb">disinfection-pipes</span>/<wbr></a></td><td style="text-align:center">1</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://kdigum.co.il/legionella/" href="https://kdigum.co.il/legionella/" target="_blank" rel="noopener">/<wbr><span class="nb">legionella</span>/<wbr></a></td><td style="text-align:center">1</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://kdigum.co.il/legionella-pcr/" href="https://kdigum.co.il/legionella-pcr/" target="_blank" rel="noopener">/<wbr><span class="nb">legionella-pcr</span>/<wbr></a></td><td style="text-align:center">1</td></tr></tbody></table></div>
+</div><div class="card" style="margin-top:16px"><h3>פניות לפי סוג ולפי מקור ההגעה</h3><table class="tbl tbl-kw"><thead><tr><th style="text-align:right">סוג הפנייה</th><th style="text-align:center">גוגל (אורגני)</th><th style="text-align:center">ניווט באתר</th><th style="text-align:center">chatgpt.com</th><th style="text-align:center">ישיר</th><th style="text-align:center">סה״כ</th></tr></thead><tbody><tr><td style="text-align:right">חיוג ישיר</td><td style="text-align:center">16</td><td style="text-align:center">2</td><td style="text-align:center">1</td><td style="text-align:center">—</td><td style="text-align:center"><b>19</b></td></tr><tr><td style="text-align:right">וואטסאפ</td><td style="text-align:center">4</td><td style="text-align:center">2</td><td style="text-align:center">1</td><td style="text-align:center">—</td><td style="text-align:center"><b>7</b></td></tr><tr><td style="text-align:right">טופס יצירת קשר</td><td style="text-align:center">1</td><td style="text-align:center">—</td><td style="text-align:center">—</td><td style="text-align:center">1</td><td style="text-align:center"><b>2</b></td></tr><tr><td style="text-align:right"><b>סה״כ</b></td><td style="text-align:center"><b>21</b></td><td style="text-align:center"><b>4</b></td><td style="text-align:center"><b>2</b></td><td style="text-align:center"><b>1</b></td><td style="text-align:center"><b>28</b></td></tr></tbody></table></div>
 </section>
 
 <footer>
-  דוח זה הופק עבור קיסר דיגום · <a class="site-link" href="https://kdigum.co.il/" target="_blank" rel="noopener">kdigum.co.il</a> · 03/10/2026<br>
+  דוח זה הופק עבור קיסר דיגום · <a class="site-link" href="https://kdigum.co.il/" target="_blank" rel="noopener">kdigum.co.il</a> · 04/10/2026<br>
   מקורות הנתונים: Google Analytics 4, Google Search Console ומערכת ניטור המיקומים ZEFO.
 </footer>
 </div>
