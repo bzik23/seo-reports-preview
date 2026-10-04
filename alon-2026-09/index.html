@@ -67,6 +67,9 @@
   }
   .lead { color: var(--ink-2); font-size: 14px; margin: 0 0 18px; padding-right: 18px; }
   h3 { font-size: 15px; font-weight: 700; margin: 0 0 14px; color: var(--ink); }
+  .sub-h { margin: 22px 0 6px; padding-right: 18px; }
+  .sub-h + .lead { margin-bottom: 12px; }
+  .sub-h ~ .tiles { margin-bottom: 16px; }
   .card {
     background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
     padding: 20px 22px; margin-bottom: 16px;
@@ -140,7 +143,7 @@
   .u { direction: ltr; display: inline-block; unicode-bidi: isolate;
     font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
   /* Path segments never split - a URL broken mid-word reassembles into a 404. */
-  .u .nb { white-space: nowrap; }
+  .u .nb, bdi.nb { white-space: nowrap; }
   a.u, a.bar-link { text-decoration: none; border-bottom: 1px dotted #c9c8c2;
     transition: color .15s, border-color .15s; }
   a.u:hover, a.bar-link:hover { color: var(--brand); border-bottom-color: var(--brand); }
@@ -165,6 +168,11 @@
     .cover { margin-bottom: 18px; padding: 22px 0 18px; }
     .cover-in { max-width: none; padding: 0 10px; }
     .card, .tile, section { break-inside: avoid; page-break-inside: avoid; }
+    /* A table longer than a page has to be allowed to split - between rows. */
+    .card.card-long { break-inside: auto; page-break-inside: auto; }
+    .card-long tr { break-inside: avoid; page-break-inside: avoid; }
+    /* Fixed layout splits the width evenly; a keyword needs more than a number. */
+    .tbl-kw th:first-child { width: 34%; }
     section { margin-bottom: 20px; }
     h2 { font-size: 16px; }
     .cover h1 { font-size: 26px; }
@@ -236,7 +244,7 @@
 </div></div>
   <div class="card" style="margin-top:16px">
     <h3>עיקרי הדברים</h3>
-    <ul class="summary-list"><li>התנועה לאתר ירדה ב-20% לעומת אוגוסט - 299 כניסות מול 376.</li><li>התנועה האורגנית מגוגל, שהיא מנוע הצמיחה המרכזי, ירדה ב-68% והיא מהווה 8% מכלל הכניסות.</li><li>0 מתוך 42 מילות המפתח שבמעקב נמצאות בעמוד הראשון של גוגל, מתוכן 0 בשלושת המקומות הראשונים.</li><li>נרשמו 5 אירועי "ליד נשלח" בספטמבר לעומת 1 באוגוסט.</li></ul>
+    <ul class="summary-list"><li>התנועה לאתר ירדה ב-20% לעומת אוגוסט - 299 כניסות מול 376.</li><li>התנועה האורגנית מגוגל, שהיא מנוע הצמיחה המרכזי, ירדה ב-68% והיא מהווה 8% מכלל הכניסות.</li><li>0 מתוך 42 מילות המפתח שבמעקב נמצאות בעמוד הראשון של גוגל, מתוכן 0 בשלושת המקומות הראשונים.</li><li>נרשמו 5 אירועי "ליד נשלח" בספטמבר (ישיר 4 · הפניות 1), לעומת 1 באוגוסט.</li></ul>
   </div>
 </section>
 
@@ -347,11 +355,15 @@
 <section>
   <h2>לידים ופניות מהאתר</h2>
   <p class="lead">הפניות שנמדדו באתר - טפסים ולחיצות על וואטסאפ וחיוג. פעולות גלישה כמו גלילה, קליקים יוצאים והורדות אינן נספרות כאן.</p>
-  
-  <div class="card">
-    <h3>פניות לפי סוג</h3>
-    <table class="tbl "><thead><tr><th style="text-align:right">סוג הפנייה</th><th style="text-align:center">ספטמבר</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">התחלת טופס</td><td style="text-align:center">6</td><td style="text-align:center">11</td><td style="text-align:center"><span class="chip chip-bad">▼ 45%</span></td></tr><tr><td style="text-align:right">ליד נשלח</td><td style="text-align:center">5</td><td style="text-align:center">1</td><td style="text-align:center"><span class="chip chip-good">▲ 400%</span></td></tr></tbody></table>
-  </div>
+  <div class="tiles"><div class="tile" style="--tile-accent:#5F7A6A">
+  <div class="tile-label">ליד נשלח</div>
+  <div class="tile-value">5</div>
+  <div class="tile-foot"><span class="chip chip-good">▲ 400%</span><span class="tile-sub">ישיר 4 · הפניות 1</span></div>
+</div><div class="tile" style="--tile-accent:#5F7A6A">
+  <div class="tile-label">התחלת טופס</div>
+  <div class="tile-value">6</div>
+  <div class="tile-foot"><span class="chip chip-bad">▼ 45%</span><span class="tile-sub">ישיר 5 · הפניות 1</span></div>
+</div></div><div style="height:16px"></div><div class="card"><h3>פניות לפי סוג ולפי ערוץ תנועה</h3><table class="tbl tbl-kw"><thead><tr><th style="text-align:right">סוג הפנייה</th><th style="text-align:center">ישיר</th><th style="text-align:center">הפניות</th><th style="text-align:center">סה״כ</th></tr></thead><tbody><tr><td style="text-align:right">ליד נשלח</td><td style="text-align:center">4</td><td style="text-align:center">1</td><td style="text-align:center"><b>5</b></td></tr><tr><td style="text-align:right">התחלת טופס</td><td style="text-align:center">5</td><td style="text-align:center">1</td><td style="text-align:center"><b>6</b></td></tr></tbody></table></div><div class="card"><h3>פניות לפי סוג - לעומת אוגוסט</h3><table class="tbl "><thead><tr><th style="text-align:right">סוג הפנייה</th><th style="text-align:center">ספטמבר</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">התחלת טופס</td><td style="text-align:center">6</td><td style="text-align:center">11</td><td style="text-align:center"><span class="chip chip-bad">▼ 45%</span></td></tr><tr><td style="text-align:right">ליד נשלח</td><td style="text-align:center">5</td><td style="text-align:center">1</td><td style="text-align:center"><span class="chip chip-good">▲ 400%</span></td></tr></tbody></table></div>
 </section>
 
 <footer>
