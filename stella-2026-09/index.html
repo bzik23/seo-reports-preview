@@ -67,6 +67,9 @@
   }
   .lead { color: var(--ink-2); font-size: 14px; margin: 0 0 18px; padding-right: 18px; }
   h3 { font-size: 15px; font-weight: 700; margin: 0 0 14px; color: var(--ink); }
+  .sub-h { margin: 22px 0 6px; padding-right: 18px; }
+  .sub-h + .lead { margin-bottom: 12px; }
+  .sub-h ~ .tiles { margin-bottom: 16px; }
   .card {
     background: var(--surface); border: 1px solid var(--grid); border-radius: 12px;
     padding: 20px 22px; margin-bottom: 16px;
@@ -140,7 +143,7 @@
   .u { direction: ltr; display: inline-block; unicode-bidi: isolate;
     font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
   /* Path segments never split - a URL broken mid-word reassembles into a 404. */
-  .u .nb { white-space: nowrap; }
+  .u .nb, bdi.nb { white-space: nowrap; }
   a.u, a.bar-link { text-decoration: none; border-bottom: 1px dotted #c9c8c2;
     transition: color .15s, border-color .15s; }
   a.u:hover, a.bar-link:hover { color: var(--brand); border-bottom-color: var(--brand); }
@@ -165,6 +168,11 @@
     .cover { margin-bottom: 18px; padding: 22px 0 18px; }
     .cover-in { max-width: none; padding: 0 10px; }
     .card, .tile, section { break-inside: avoid; page-break-inside: avoid; }
+    /* A table longer than a page has to be allowed to split - between rows. */
+    .card.card-long { break-inside: auto; page-break-inside: auto; }
+    .card-long tr { break-inside: avoid; page-break-inside: avoid; }
+    /* Fixed layout splits the width evenly; a keyword needs more than a number. */
+    .tbl-kw th:first-child { width: 34%; }
     section { margin-bottom: 20px; }
     h2 { font-size: 16px; }
     .cover h1 { font-size: 26px; }
@@ -201,7 +209,7 @@
       <div class="sub">סטלה סנטר ישראל · <a class="site-link" href="https://israel.stellacenter.com/" target="_blank" rel="noopener">israel.stellacenter.com</a></div>
       <div class="meta">
         תקופת הדוח: <b>1-30 בספטמבר 2026</b><br>
-        השוואה מול חודש <b>אוגוסט</b> · הופק בתאריך 03/10/2026
+        נתוני <b>ספטמבר</b> בלבד · הופק בתאריך 03/10/2026
       </div>
     </div>
     <div class="cover-side">
@@ -216,66 +224,65 @@
 
 <section>
   <h2>תמונת מצב</h2>
-  <p class="lead">המדדים המרכזיים של ספטמבר בהשוואה לאוגוסט.</p>
+  <p class="lead">המדדים המרכזיים של ספטמבר.</p>
   <div class="tiles"><div class="tile" style="--tile-accent:#92003B">
   <div class="tile-label">כניסות לאתר</div>
   <div class="tile-value">4,670</div>
-  <div class="tile-foot"><span class="chip chip-bad">▼ 19%</span><span class="tile-sub">לעומת 5,786 באוגוסט</span></div>
+  <div class="tile-foot"><span class="tile-sub">סה״כ בספטמבר</span></div>
 </div><div class="tile" style="--tile-accent:#92003B">
   <div class="tile-label">תנועה אורגנית מגוגל</div>
   <div class="tile-value">715</div>
-  <div class="tile-foot"><span class="chip chip-bad">▼ 18%</span><span class="tile-sub">לעומת 874 באוגוסט</span></div>
+  <div class="tile-foot"><span class="tile-sub">15% מכלל הכניסות</span></div>
 </div><div class="tile" style="--tile-accent:#92003B">
   <div class="tile-label">קליקים מתוצאות החיפוש</div>
   <div class="tile-value">569</div>
-  <div class="tile-foot"><span class="chip chip-bad">▼ 11%</span><span class="tile-sub">מתוך 50,306 הופעות</span></div>
+  <div class="tile-foot"><span class="tile-sub">מתוך 50,306 הופעות</span></div>
 </div><div class="tile" style="--tile-accent:#92003B">
   <div class="tile-label">ליד נשלח</div>
   <div class="tile-value">123</div>
-  <div class="tile-foot"><span class="chip chip-bad">▼ 46%</span><span class="tile-sub">לעומת 227 באוגוסט</span></div>
+  <div class="tile-foot"><span class="tile-sub">סה״כ בספטמבר</span></div>
 </div></div>
   <div class="card" style="margin-top:16px">
     <h3>עיקרי הדברים</h3>
-    <ul class="summary-list"><li>התנועה לאתר ירדה ב-19% לעומת אוגוסט - 4,670 כניסות מול 5,786.</li><li>התנועה האורגנית מגוגל, שהיא מנוע הצמיחה המרכזי, ירדה ב-18% והיא מהווה 15% מכלל הכניסות.</li><li>הקליקים מתוצאות החיפוש של גוגל ירדו ב-11% (569 מול 637), עם שיפור בשיעור ההקלקה (0.92% ← 1.13%).</li><li>61 מילות מפתח נמצאות בעמוד הראשון של גוגל לעומת 65 באוגוסט, מתוכן 28 בשלושת המקומות הראשונים.</li><li>נרשמו 123 אירועי "ליד נשלח" בספטמבר לעומת 227 באוגוסט.</li></ul>
+    <ul class="summary-list"><li>הדוח מציג את נתוני ספטמבר בלבד, ללא השוואה לחודש קודם.</li><li>בספטמבר נרשמו 4,670 כניסות לאתר, מתוכן 715 מחיפוש אורגני בגוגל.</li><li>התקבלו 569 קליקים מתוצאות החיפוש של גוגל, מתוך 50,306 הופעות.</li><li>61 מתוך 88 מילות המפתח שבמעקב נמצאות בעמוד הראשון של גוגל, מתוכן 28 בשלושת המקומות הראשונים.</li><li>נרשמו 123 אירועי "ליד נשלח" בספטמבר (ממומן 102 · ישיר 10 · אורגני 9 · הפניות 1).</li><li>מהערוץ האורגני נרשמו: ליד נשלח 9 · קליק על וואטסאפ 14 · קליק על טלפון 1.</li></ul>
   </div>
 </section>
 
 <section>
   <h2>התנועה לאתר</h2>
-  <p class="lead">כמה גולשים הגיעו לאתר ומאיפה הם הגיעו.</p>
+  <p class="lead">כמה גולשים הגיעו לאתר ומאיפה הם הגיעו בספטמבר.</p>
   <div class="grid-2">
-    <div class="card"><h3>כניסות לפי מקור תנועה</h3><div class="legend"><span class="key key-cur"></span>ספטמבר<span class="key key-prev"></span>אוגוסט</div>
-<div class="bars">
+    <div class="card"><h3>כניסות לפי מקור תנועה</h3><div class="bars">
 <div class="bar-row">
   <div class="bar-name">תנועה ממומנת</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:72.85%"></i><b>2,925</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:100.00%"></i><b>4,015</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>2,925</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name">תנועה ישירה</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:22.09%"></i><b>887</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:18.56%"></i><b>745</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:30.32%"></i><b>887</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name">תנועה אורגנית</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:17.81%"></i><b>715</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:21.77%"></i><b>874</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:24.44%"></i><b>715</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name">אחר</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:1.87%"></i><b>75</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:2.39%"></i><b>96</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:2.56%"></i><b>75</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name">תנועת הפניה</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:1.47%"></i><b>59</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:1.12%"></i><b>45</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:2.02%"></i><b>59</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name">תנועת AI</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:0.22%"></i><b>9</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:0.27%"></i><b>11</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:0.31%"></i><b>9</b></div></div>
 </div>
 </div></div>
-    <div class="card"><h3>מדדי תנועה מרכזיים</h3><table class="tbl "><thead><tr><th style="text-align:right">מדד</th><th style="text-align:center">ספטמבר</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">כניסות לאתר</td><td style="text-align:center">4,670</td><td style="text-align:center">5,786</td><td style="text-align:center"><span class="chip chip-bad">▼ 19%</span></td></tr><tr><td style="text-align:right">מתוכן אורגני מגוגל</td><td style="text-align:center">715</td><td style="text-align:center">874</td><td style="text-align:center"><span class="chip chip-bad">▼ 18%</span></td></tr><tr><td style="text-align:right">משתמשים חדשים</td><td style="text-align:center">3,434</td><td style="text-align:center">4,302</td><td style="text-align:center"><span class="chip chip-bad">▼ 20%</span></td></tr><tr><td style="text-align:right">שיעור משתמשים חדשים</td><td style="text-align:center">73.5%</td><td style="text-align:center">74.3%</td><td style="text-align:center"></td></tr><tr><td style="text-align:right">שיעור נטישה</td><td style="text-align:center">47.6%</td><td style="text-align:center">45.6%</td><td style="text-align:center"><span class="chip chip-bad">▲ 4%</span></td></tr></tbody></table></div>
+    <div class="card"><h3>מדדי תנועה מרכזיים</h3><table class="tbl "><thead><tr><th style="text-align:right">מדד</th><th style="text-align:center">ספטמבר</th></tr></thead><tbody><tr><td style="text-align:right">כניסות לאתר</td><td style="text-align:center">4,670</td></tr><tr><td style="text-align:right">מתוכן אורגני מגוגל</td><td style="text-align:center">715</td></tr><tr><td style="text-align:right">משתמשים חדשים</td><td style="text-align:center">3,434</td></tr><tr><td style="text-align:right">שיעור משתמשים חדשים</td><td style="text-align:center">73.5%</td></tr><tr><td style="text-align:right">שיעור נטישה</td><td style="text-align:center">47.6%</td></tr></tbody></table></div>
   </div>
   <div class="grid-2">
-    <div class="card"><h3>נייד מול מחשב</h3><div class="stack-row"><div class="stack-label">ספטמבר</div><div class="stack"><i class="seg" style="width:82.52%;background:#92003B"><span>נייד 83%</span></i><i class="seg" style="width:17.48%;background:#b9b7ae"><span>מחשב 17%</span></i></div></div><div class="stack-row"><div class="stack-label">אוגוסט</div><div class="stack"><i class="seg" style="width:84.39%;background:#92003B"><span>נייד 84%</span></i><i class="seg" style="width:15.61%;background:#b9b7ae"><span>מחשב 16%</span></i></div></div></div>
-    <div class="card"><h3>כניסות לפי סוג מכשיר</h3><table class="tbl "><thead><tr><th style="text-align:right">מכשיר</th><th style="text-align:center">ספטמבר</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">נייד וטאבלט</td><td style="text-align:center">3,862</td><td style="text-align:center">4,889</td><td style="text-align:center"><span class="chip chip-bad">▼ 21%</span></td></tr><tr><td style="text-align:right">מחשב שולחני</td><td style="text-align:center">818</td><td style="text-align:center">904</td><td style="text-align:center"><span class="chip chip-bad">▼ 10%</span></td></tr></tbody></table></div>
+    <div class="card"><h3>נייד מול מחשב</h3><div class="stack-row"><div class="stack-label">ספטמבר</div><div class="stack"><i class="seg" style="width:82.52%;background:#92003B"><span>נייד 83%</span></i><i class="seg" style="width:17.48%;background:#b9b7ae"><span>מחשב 17%</span></i></div></div></div>
+    <div class="card"><h3>כניסות לפי סוג מכשיר</h3><table class="tbl "><thead><tr><th style="text-align:right">מכשיר</th><th style="text-align:center">ספטמבר</th></tr></thead><tbody><tr><td style="text-align:right">נייד וטאבלט</td><td style="text-align:center">3,862</td></tr><tr><td style="text-align:right">מחשב שולחני</td><td style="text-align:center">818</td></tr></tbody></table></div>
   </div>
 </section>
 
@@ -290,97 +297,107 @@
 </div><div class="tile" style="--tile-accent:#92003B">
   <div class="tile-label">בעמוד הראשון בגוגל</div>
   <div class="tile-value">61</div>
-  <div class="tile-foot"><span class="chip chip-bad">▼ 6%</span><span class="tile-sub">לעומת 65 באוגוסט</span></div>
+  <div class="tile-foot"><span class="tile-sub">מתוך 88 מילים במעקב</span></div>
 </div><div class="tile" style="--tile-accent:#92003B">
   <div class="tile-label">בשלושת המקומות הראשונים</div>
   <div class="tile-value">28</div>
-  <div class="tile-foot"><span class="chip chip-flat">ללא שינוי</span><span class="tile-sub">לעומת 28 באוגוסט</span></div>
+  <div class="tile-foot"><span class="tile-sub">מתוך 88 מילים במעקב</span></div>
 </div><div class="tile" style="--tile-accent:#92003B">
-  <div class="tile-label">מילים שהשתפרו</div>
-  <div class="tile-value">26</div>
-  <div class="tile-foot"><span class="tile-sub">מתוך 85 מילים ברות-השוואה</span></div>
+  <div class="tile-label">מיקום ממוצע</div>
+  <div class="tile-value">8.5</div>
+  <div class="tile-foot"><span class="tile-sub">על פני 85 מילים מדורגות</span></div>
 </div></div>
   <div class="card" style="margin-top:16px">
     <h3>התפלגות המילים לפי טווח מיקומים</h3>
-    <div class="legend"><span class="key key-cur"></span>ספטמבר<span class="key key-prev"></span>אוגוסט</div>
-<div class="bars">
+    <div class="bars">
 <div class="bar-row">
   <div class="bar-name">1-3</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:75.68%"></i><b>28</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:75.68%"></i><b>28</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:84.85%"></i><b>28</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name">4-10</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:89.19%"></i><b>33</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:100.00%"></i><b>37</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>33</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name">11-20</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:35.14%"></i><b>13</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:32.43%"></i><b>12</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:39.39%"></i><b>13</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name">21 ומעלה</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:29.73%"></i><b>11</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:21.62%"></i><b>8</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:33.33%"></i><b>11</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name">ללא מיקום</div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:8.11%"></i><b>3</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:8.11%"></i><b>3</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:9.09%"></i><b>3</b></div></div>
 </div>
 </div>
-    <p class="note">מתוך 88 מילות המפתח שבמעקב, ל-85 יש נתוני מיקום בשני החודשים ולכן רק הן ניתנות להשוואה. השאר נכנסו למעקב במהלך התקופה או שטרם נמדד להן מיקום.</p>
+    <p class="note">מתוך 88 מילות המפתח שבמעקב, ל-85 נמדד מיקום בספטמבר. השאר נכנסו למעקב במהלך התקופה או שטרם נמדד להן מיקום.</p>
   </div>
-  <div class="card"><h3>המילים שהשתפרו הכי הרבה</h3><table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">ספטמבר</th><th style="text-align:center">שיפור</th></tr></thead><tbody><tr><td style="text-align:right">טיפול ONLINE לפםט טראומה</td><td style="text-align:center">40</td><td style="text-align:center">22.5</td><td style="text-align:center">17.5</td><td style="text-align:center"><span class="chip chip-good">▲ 5.0</span></td></tr><tr><td style="text-align:right">פוסט טראומה מורכבת תסמינים</td><td style="text-align:center">220</td><td style="text-align:center">6.2</td><td style="text-align:center">5.0</td><td style="text-align:center"><span class="chip chip-good">▲ 1.2</span></td></tr><tr><td style="text-align:right">טיפול בהפרעה פוסט טראומטית</td><td style="text-align:center">40</td><td style="text-align:center">5.2</td><td style="text-align:center">4.1</td><td style="text-align:center"><span class="chip chip-good">▲ 1.1</span></td></tr><tr><td style="text-align:right">בלוק עצבי</td><td style="text-align:center">80</td><td style="text-align:center">12.5</td><td style="text-align:center">11.4</td><td style="text-align:center"><span class="chip chip-good">▲ 1.1</span></td></tr><tr><td style="text-align:right">הילחם או ברח טיפול</td><td style="text-align:center">50</td><td style="text-align:center">5.3</td><td style="text-align:center">4.4</td><td style="text-align:center"><span class="chip chip-good">▲ 0.9</span></td></tr><tr><td style="text-align:right">אבחון וטיפול בפוסט טראומה</td><td style="text-align:center">40</td><td style="text-align:center">7.0</td><td style="text-align:center">6.2</td><td style="text-align:center"><span class="chip chip-good">▲ 0.8</span></td></tr><tr><td style="text-align:right">טיפול קטמין</td><td style="text-align:center">60</td><td style="text-align:center">10.9</td><td style="text-align:center">10.2</td><td style="text-align:center"><span class="chip chip-good">▲ 0.7</span></td></tr><tr><td style="text-align:right">טיפול בקטמין</td><td style="text-align:center">310</td><td style="text-align:center">11.4</td><td style="text-align:center">10.8</td><td style="text-align:center"><span class="chip chip-good">▲ 0.6</span></td></tr><tr><td style="text-align:right">קטמין לחרדה</td><td style="text-align:center">40</td><td style="text-align:center">9.7</td><td style="text-align:center">9.1</td><td style="text-align:center"><span class="chip chip-good">▲ 0.6</span></td></tr><tr><td style="text-align:right">טיפול בדיכאון באמצעות קטמין</td><td style="text-align:center">40</td><td style="text-align:center">7.4</td><td style="text-align:center">6.8</td><td style="text-align:center"><span class="chip chip-good">▲ 0.6</span></td></tr></tbody></table></div><div class="card"><h3>המילים החזקות ביותר כרגע</h3><table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">מיקום ממוצע בספטמבר</th><th style="text-align:center">המיקום הטוב ביותר</th></tr></thead><tbody><tr><td style="text-align:right">sgb טיפול</td><td style="text-align:center">130</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">עוררות יתר תסמינים</td><td style="text-align:center">80</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">סטלה ישראל</td><td style="text-align:center">140</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">sgb</td><td style="text-align:center">230</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">טיפול sgb</td><td style="text-align:center">110</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">עוררות יתר</td><td style="text-align:center">150</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">שיטת SGB</td><td style="text-align:center">40</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">סימנים לפוסט טראומה מינית</td><td style="text-align:center">100</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">טיפול רפואי לפוסט טראומה</td><td style="text-align:center">30</td><td style="text-align:center">1.4</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">טיפול בעוררות יתר</td><td style="text-align:center">40</td><td style="text-align:center">1.8</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">זריקה לפוסט טראומה</td><td style="text-align:center">80</td><td style="text-align:center">1.9</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">פוסט טראומה מינית</td><td style="text-align:center">80</td><td style="text-align:center">2.0</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">סימנים לפוסט טראומה</td><td style="text-align:center">100</td><td style="text-align:center">2.0</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">סימני פוסט טראומה</td><td style="text-align:center">70</td><td style="text-align:center">2.0</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">זריקת sgb</td><td style="text-align:center">80</td><td style="text-align:center">2.0</td><td style="text-align:center">2</td></tr></tbody></table></div>
+  <div class="card"><h3>המילים החזקות ביותר כרגע</h3><table class="tbl "><thead><tr><th style="text-align:right">מילת מפתח</th><th style="text-align:center">חיפושים בחודש</th><th style="text-align:center">מיקום ממוצע בספטמבר</th><th style="text-align:center">המיקום הטוב ביותר</th></tr></thead><tbody><tr><td style="text-align:right">sgb טיפול</td><td style="text-align:center">130</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">עוררות יתר תסמינים</td><td style="text-align:center">80</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">סטלה ישראל</td><td style="text-align:center">140</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">sgb</td><td style="text-align:center">230</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">טיפול sgb</td><td style="text-align:center">110</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">עוררות יתר</td><td style="text-align:center">150</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">שיטת SGB</td><td style="text-align:center">40</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">סימנים לפוסט טראומה מינית</td><td style="text-align:center">100</td><td style="text-align:center">1.0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">טיפול רפואי לפוסט טראומה</td><td style="text-align:center">30</td><td style="text-align:center">1.4</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">טיפול בעוררות יתר</td><td style="text-align:center">40</td><td style="text-align:center">1.8</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">זריקה לפוסט טראומה</td><td style="text-align:center">80</td><td style="text-align:center">1.9</td><td style="text-align:center">1</td></tr><tr><td style="text-align:right">פוסט טראומה מינית</td><td style="text-align:center">80</td><td style="text-align:center">2.0</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">סימנים לפוסט טראומה</td><td style="text-align:center">100</td><td style="text-align:center">2.0</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">סימני פוסט טראומה</td><td style="text-align:center">70</td><td style="text-align:center">2.0</td><td style="text-align:center">2</td></tr><tr><td style="text-align:right">זריקת sgb</td><td style="text-align:center">80</td><td style="text-align:center">2.0</td><td style="text-align:center">2</td></tr></tbody></table></div>
 </section>
 
 <section>
   <h2>עשרת העמודים החזקים ביותר</h2>
   <p class="lead">העמודים שמביאים הכי הרבה כניסות מתוצאות החיפוש של גוגל.</p>
-  <div class="card"><div class="legend"><span class="key key-cur"></span>ספטמבר<span class="key key-prev"></span>אוגוסט</div>
-<div class="bars">
+  <div class="card"><div class="bars">
 <div class="bar-row">
   <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://israel.stellacenter.com/" href="https://israel.stellacenter.com/" target="_blank" rel="noopener"><span class="nb">עמוד הבית</span></a></div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:95.27%"></i><b>141</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:100.00%"></i><b>148</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:100.00%"></i><b>141</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/ptsd-signs/" href="https://israel.stellacenter.com/knowledge-center/ptsd-signs/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">ptsd-signs</span>/<wbr></a></div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:54.05%"></i><b>80</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:63.51%"></i><b>94</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:56.74%"></i><b>80</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/hyperarousal/" href="https://israel.stellacenter.com/knowledge-center/hyperarousal/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">hyperarousal</span>/<wbr></a></div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:50.00%"></i><b>74</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:42.57%"></i><b>63</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:52.48%"></i><b>74</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/c-ptsd/" href="https://israel.stellacenter.com/knowledge-center/c-ptsd/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">c-ptsd</span>/<wbr></a></div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:29.05%"></i><b>43</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:27.03%"></i><b>40</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:30.50%"></i><b>43</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/post-trauma-sexual-abuse/" href="https://israel.stellacenter.com/knowledge-center/post-trauma-sexual-abuse/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">post-trauma-sexual-abuse</span>/<wbr></a></div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:20.95%"></i><b>31</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:23.65%"></i><b>35</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:21.99%"></i><b>31</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/ketamine-and-depression/" href="https://israel.stellacenter.com/knowledge-center/ketamine-and-depression/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">ketamine-and-depression</span>/<wbr></a></div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:18.92%"></i><b>28</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:18.92%"></i><b>28</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:19.86%"></i><b>28</b></div></div>
 </div>
 <div class="bar-row">
   <div class="bar-name"><a class="u bar-link" dir="ltr" title="https://israel.stellacenter.com/fqa/" href="https://israel.stellacenter.com/fqa/" target="_blank" rel="noopener">/<wbr><span class="nb">fqa</span>/<wbr></a></div>
-  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:16.22%"></i><b>24</b></div><div class="bar-line"><i class="bar-fill bar-prev" style="width:11.49%"></i><b>17</b></div></div>
+  <div class="bar-track"><div class="bar-line"><i class="bar-fill bar-cur" style="width:17.02%"></i><b>24</b></div></div>
 </div>
 </div></div>
-  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">עמוד</th><th style="text-align:center">קליקים ספטמבר</th><th style="text-align:center">קליקים אוגוסט</th><th style="text-align:center">שינוי</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/" href="https://israel.stellacenter.com/" target="_blank" rel="noopener"><span class="nb">עמוד הבית</span></a></td><td style="text-align:center">141</td><td style="text-align:center">148</td><td style="text-align:center"><span class="chip chip-bad">▼ 5%</span></td><td style="text-align:center">8,069</td><td style="text-align:center">1.75%</td><td style="text-align:center">12.15</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/ptsd-signs/" href="https://israel.stellacenter.com/knowledge-center/ptsd-signs/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">ptsd-signs</span>/<wbr></a></td><td style="text-align:center">80</td><td style="text-align:center">94</td><td style="text-align:center"><span class="chip chip-bad">▼ 15%</span></td><td style="text-align:center">9,887</td><td style="text-align:center">0.81%</td><td style="text-align:center">8.40</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/hyperarousal/" href="https://israel.stellacenter.com/knowledge-center/hyperarousal/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">hyperarousal</span>/<wbr></a></td><td style="text-align:center">74</td><td style="text-align:center">63</td><td style="text-align:center"><span class="chip chip-good">▲ 17%</span></td><td style="text-align:center">1,507</td><td style="text-align:center">4.91%</td><td style="text-align:center">6.33</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/c-ptsd/" href="https://israel.stellacenter.com/knowledge-center/c-ptsd/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">c-ptsd</span>/<wbr></a></td><td style="text-align:center">43</td><td style="text-align:center">40</td><td style="text-align:center"><span class="chip chip-good">▲ 8%</span></td><td style="text-align:center">4,018</td><td style="text-align:center">1.07%</td><td style="text-align:center">10.05</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/post-trauma-sexual-abuse/" href="https://israel.stellacenter.com/knowledge-center/post-trauma-sexual-abuse/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">post-trauma-sexual-abuse</span>/<wbr></a></td><td style="text-align:center">31</td><td style="text-align:center">35</td><td style="text-align:center"><span class="chip chip-bad">▼ 11%</span></td><td style="text-align:center">851</td><td style="text-align:center">3.64%</td><td style="text-align:center">9.97</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/ketamine-and-depression/" href="https://israel.stellacenter.com/knowledge-center/ketamine-and-depression/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">ketamine-and-depression</span>/<wbr></a></td><td style="text-align:center">28</td><td style="text-align:center">28</td><td style="text-align:center"><span class="chip chip-flat">ללא שינוי</span></td><td style="text-align:center">6,281</td><td style="text-align:center">0.45%</td><td style="text-align:center">8.10</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/fqa/" href="https://israel.stellacenter.com/fqa/" target="_blank" rel="noopener">/<wbr><span class="nb">fqa</span>/<wbr></a></td><td style="text-align:center">24</td><td style="text-align:center">17</td><td style="text-align:center"><span class="chip chip-good">▲ 41%</span></td><td style="text-align:center">1,187</td><td style="text-align:center">2.02%</td><td style="text-align:center">4.15</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/mdma-ptsd/" href="https://israel.stellacenter.com/knowledge-center/mdma-ptsd/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">mdma-ptsd</span>/<wbr></a></td><td style="text-align:center">18</td><td style="text-align:center">32</td><td style="text-align:center"><span class="chip chip-bad">▼ 44%</span></td><td style="text-align:center">1,551</td><td style="text-align:center">1.16%</td><td style="text-align:center">7.51</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/diagnosis-ptsd/" href="https://israel.stellacenter.com/knowledge-center/diagnosis-ptsd/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">diagnosis-ptsd</span>/<wbr></a></td><td style="text-align:center">17</td><td style="text-align:center">33</td><td style="text-align:center"><span class="chip chip-bad">▼ 48%</span></td><td style="text-align:center">777</td><td style="text-align:center">2.19%</td><td style="text-align:center">10.90</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/going-off-antidepressants/" href="https://israel.stellacenter.com/knowledge-center/going-off-antidepressants/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">going-off-antidepressants</span>/<wbr></a></td><td style="text-align:center">16</td><td style="text-align:center">13</td><td style="text-align:center"><span class="chip chip-good">▲ 23%</span></td><td style="text-align:center">1,247</td><td style="text-align:center">1.28%</td><td style="text-align:center">15.81</td></tr></tbody></table></div>
+  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">עמוד</th><th style="text-align:center">קליקים ספטמבר</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/" href="https://israel.stellacenter.com/" target="_blank" rel="noopener"><span class="nb">עמוד הבית</span></a></td><td style="text-align:center">141</td><td style="text-align:center">8,069</td><td style="text-align:center">1.75%</td><td style="text-align:center">12.15</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/ptsd-signs/" href="https://israel.stellacenter.com/knowledge-center/ptsd-signs/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">ptsd-signs</span>/<wbr></a></td><td style="text-align:center">80</td><td style="text-align:center">9,887</td><td style="text-align:center">0.81%</td><td style="text-align:center">8.40</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/hyperarousal/" href="https://israel.stellacenter.com/knowledge-center/hyperarousal/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">hyperarousal</span>/<wbr></a></td><td style="text-align:center">74</td><td style="text-align:center">1,507</td><td style="text-align:center">4.91%</td><td style="text-align:center">6.33</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/c-ptsd/" href="https://israel.stellacenter.com/knowledge-center/c-ptsd/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">c-ptsd</span>/<wbr></a></td><td style="text-align:center">43</td><td style="text-align:center">4,018</td><td style="text-align:center">1.07%</td><td style="text-align:center">10.05</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/post-trauma-sexual-abuse/" href="https://israel.stellacenter.com/knowledge-center/post-trauma-sexual-abuse/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">post-trauma-sexual-abuse</span>/<wbr></a></td><td style="text-align:center">31</td><td style="text-align:center">851</td><td style="text-align:center">3.64%</td><td style="text-align:center">9.97</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/ketamine-and-depression/" href="https://israel.stellacenter.com/knowledge-center/ketamine-and-depression/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">ketamine-and-depression</span>/<wbr></a></td><td style="text-align:center">28</td><td style="text-align:center">6,281</td><td style="text-align:center">0.45%</td><td style="text-align:center">8.10</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/fqa/" href="https://israel.stellacenter.com/fqa/" target="_blank" rel="noopener">/<wbr><span class="nb">fqa</span>/<wbr></a></td><td style="text-align:center">24</td><td style="text-align:center">1,187</td><td style="text-align:center">2.02%</td><td style="text-align:center">4.15</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/mdma-ptsd/" href="https://israel.stellacenter.com/knowledge-center/mdma-ptsd/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">mdma-ptsd</span>/<wbr></a></td><td style="text-align:center">18</td><td style="text-align:center">1,551</td><td style="text-align:center">1.16%</td><td style="text-align:center">7.51</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/diagnosis-ptsd/" href="https://israel.stellacenter.com/knowledge-center/diagnosis-ptsd/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">diagnosis-ptsd</span>/<wbr></a></td><td style="text-align:center">17</td><td style="text-align:center">777</td><td style="text-align:center">2.19%</td><td style="text-align:center">10.90</td></tr><tr><td style="text-align:right"><a class="u" dir="ltr" title="https://israel.stellacenter.com/knowledge-center/going-off-antidepressants/" href="https://israel.stellacenter.com/knowledge-center/going-off-antidepressants/" target="_blank" rel="noopener">/<wbr><span class="nb">knowledge-center</span>/<wbr><span class="nb">going-off-antidepressants</span>/<wbr></a></td><td style="text-align:center">16</td><td style="text-align:center">1,247</td><td style="text-align:center">1.28%</td><td style="text-align:center">15.81</td></tr></tbody></table></div>
 </section>
 
 <section>
   <h2>ביטויי החיפוש המובילים</h2>
   <p class="lead">מה גולשים הקלידו בגוגל לפני שהגיעו לאתר.</p>
-  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">ביטוי חיפוש</th><th style="text-align:center">קליקים ספטמבר</th><th style="text-align:center">קליקים אוגוסט</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right">סטלה ישראל</td><td style="text-align:center">19</td><td style="text-align:center">10</td><td style="text-align:center">104</td><td style="text-align:center">18.27%</td><td style="text-align:center">1.00</td></tr><tr><td style="text-align:right">פוסט טראומה תסמינים</td><td style="text-align:center">13</td><td style="text-align:center">15</td><td style="text-align:center">503</td><td style="text-align:center">2.58%</td><td style="text-align:center">2.68</td></tr><tr><td style="text-align:right">פוסט טראומה</td><td style="text-align:center">9</td><td style="text-align:center">10</td><td style="text-align:center">2,097</td><td style="text-align:center">0.43%</td><td style="text-align:center">9.37</td></tr><tr><td style="text-align:right">קטמין</td><td style="text-align:center">8</td><td style="text-align:center">8</td><td style="text-align:center">2,848</td><td style="text-align:center">0.28%</td><td style="text-align:center">7.34</td></tr><tr><td style="text-align:right">פוסט טראומה מורכבת</td><td style="text-align:center">7</td><td style="text-align:center">7</td><td style="text-align:center">1,016</td><td style="text-align:center">0.69%</td><td style="text-align:center">7.68</td></tr><tr><td style="text-align:right">טיפול sgb</td><td style="text-align:center">5</td><td style="text-align:center">3</td><td style="text-align:center">92</td><td style="text-align:center">5.43%</td><td style="text-align:center">4.55</td></tr><tr><td style="text-align:right">תסמיני פוסט טראומה</td><td style="text-align:center">5</td><td style="text-align:center">4</td><td style="text-align:center">112</td><td style="text-align:center">4.46%</td><td style="text-align:center">2.27</td></tr><tr><td style="text-align:right">md סם</td><td style="text-align:center">4</td><td style="text-align:center">1</td><td style="text-align:center">90</td><td style="text-align:center">4.44%</td><td style="text-align:center">6.44</td></tr><tr><td style="text-align:right">sgb טיפול</td><td style="text-align:center">4</td><td style="text-align:center">6</td><td style="text-align:center">104</td><td style="text-align:center">3.85%</td><td style="text-align:center">4.41</td></tr><tr><td style="text-align:right">stella israel</td><td style="text-align:center">4</td><td style="text-align:center">5</td><td style="text-align:center">61</td><td style="text-align:center">6.56%</td><td style="text-align:center">4.54</td></tr></tbody></table></div>
+  <div class="card"><table class="tbl "><thead><tr><th style="text-align:right">ביטוי חיפוש</th><th style="text-align:center">קליקים ספטמבר</th><th style="text-align:center">הופעות</th><th style="text-align:center">CTR</th><th style="text-align:center">מיקום ממוצע</th></tr></thead><tbody><tr><td style="text-align:right">סטלה ישראל</td><td style="text-align:center">19</td><td style="text-align:center">104</td><td style="text-align:center">18.27%</td><td style="text-align:center">1.00</td></tr><tr><td style="text-align:right">פוסט טראומה תסמינים</td><td style="text-align:center">13</td><td style="text-align:center">503</td><td style="text-align:center">2.58%</td><td style="text-align:center">2.68</td></tr><tr><td style="text-align:right">פוסט טראומה</td><td style="text-align:center">9</td><td style="text-align:center">2,097</td><td style="text-align:center">0.43%</td><td style="text-align:center">9.37</td></tr><tr><td style="text-align:right">קטמין</td><td style="text-align:center">8</td><td style="text-align:center">2,848</td><td style="text-align:center">0.28%</td><td style="text-align:center">7.34</td></tr><tr><td style="text-align:right">פוסט טראומה מורכבת</td><td style="text-align:center">7</td><td style="text-align:center">1,016</td><td style="text-align:center">0.69%</td><td style="text-align:center">7.68</td></tr><tr><td style="text-align:right">טיפול sgb</td><td style="text-align:center">5</td><td style="text-align:center">92</td><td style="text-align:center">5.43%</td><td style="text-align:center">4.55</td></tr><tr><td style="text-align:right">תסמיני פוסט טראומה</td><td style="text-align:center">5</td><td style="text-align:center">112</td><td style="text-align:center">4.46%</td><td style="text-align:center">2.27</td></tr><tr><td style="text-align:right">md סם</td><td style="text-align:center">4</td><td style="text-align:center">90</td><td style="text-align:center">4.44%</td><td style="text-align:center">6.44</td></tr><tr><td style="text-align:right">sgb טיפול</td><td style="text-align:center">4</td><td style="text-align:center">104</td><td style="text-align:center">3.85%</td><td style="text-align:center">4.41</td></tr><tr><td style="text-align:right">stella israel</td><td style="text-align:center">4</td><td style="text-align:center">61</td><td style="text-align:center">6.56%</td><td style="text-align:center">4.54</td></tr></tbody></table></div>
 </section>
 
 <section>
   <h2>לידים ופניות מהאתר</h2>
   <p class="lead">הפניות שנמדדו באתר - טפסים ולחיצות על וואטסאפ וחיוג. פעולות גלישה כמו גלילה, קליקים יוצאים והורדות אינן נספרות כאן.</p>
-  
-  <div class="card">
-    <h3>פניות לפי סוג</h3>
-    <table class="tbl "><thead><tr><th style="text-align:right">סוג הפנייה</th><th style="text-align:center">ספטמבר</th><th style="text-align:center">אוגוסט</th><th style="text-align:center">שינוי</th></tr></thead><tbody><tr><td style="text-align:right">התחלת טופס</td><td style="text-align:center">149</td><td style="text-align:center">184</td><td style="text-align:center"><span class="chip chip-bad">▼ 19%</span></td></tr><tr><td style="text-align:right">קליק על וואטסאפ</td><td style="text-align:center">141</td><td style="text-align:center">164</td><td style="text-align:center"><span class="chip chip-bad">▼ 14%</span></td></tr><tr><td style="text-align:right">ליד נשלח</td><td style="text-align:center">123</td><td style="text-align:center">227</td><td style="text-align:center"><span class="chip chip-bad">▼ 46%</span></td></tr><tr><td style="text-align:right">קליק על טלפון</td><td style="text-align:center">36</td><td style="text-align:center">35</td><td style="text-align:center"><span class="chip chip-good">▲ 3%</span></td></tr></tbody></table>
-  </div>
+  <div class="tiles"><div class="tile" style="--tile-accent:#92003B">
+  <div class="tile-label">ליד נשלח</div>
+  <div class="tile-value">123</div>
+  <div class="tile-foot"><span class="tile-sub">ממומן 102 · ישיר 10 · אורגני 9</span></div>
+</div><div class="tile" style="--tile-accent:#92003B">
+  <div class="tile-label">קליק על וואטסאפ</div>
+  <div class="tile-value">141</div>
+  <div class="tile-foot"><span class="tile-sub">ממומן 112 · אורגני 14 · ישיר 13</span></div>
+</div><div class="tile" style="--tile-accent:#92003B">
+  <div class="tile-label">קליק על טלפון</div>
+  <div class="tile-value">36</div>
+  <div class="tile-foot"><span class="tile-sub">ממומן 33 · ישיר 2 · אורגני 1</span></div>
+</div><div class="tile" style="--tile-accent:#92003B">
+  <div class="tile-label">התחלת טופס</div>
+  <div class="tile-value">149</div>
+  <div class="tile-foot"><span class="tile-sub">ממומן 128 · אורגני 9 · ישיר 7</span></div>
+</div></div><div style="height:16px"></div><div class="card"><h3>פניות לפי סוג ולפי ערוץ תנועה</h3><table class="tbl tbl-kw"><thead><tr><th style="text-align:right">סוג הפנייה</th><th style="text-align:center">אורגני</th><th style="text-align:center">ממומן</th><th style="text-align:center">ישיר</th><th style="text-align:center">הפניות</th><th style="text-align:center">אחר</th><th style="text-align:center">סה״כ</th></tr></thead><tbody><tr><td style="text-align:right">ליד נשלח</td><td style="text-align:center">9</td><td style="text-align:center">102</td><td style="text-align:center">10</td><td style="text-align:center">1</td><td style="text-align:center">1</td><td style="text-align:center"><b>123</b></td></tr><tr><td style="text-align:right">קליק על וואטסאפ</td><td style="text-align:center">14</td><td style="text-align:center">112</td><td style="text-align:center">13</td><td style="text-align:center">—</td><td style="text-align:center">2</td><td style="text-align:center"><b>141</b></td></tr><tr><td style="text-align:right">קליק על טלפון</td><td style="text-align:center">1</td><td style="text-align:center">33</td><td style="text-align:center">2</td><td style="text-align:center">—</td><td style="text-align:center">—</td><td style="text-align:center"><b>36</b></td></tr><tr><td style="text-align:right">התחלת טופס</td><td style="text-align:center">9</td><td style="text-align:center">128</td><td style="text-align:center">7</td><td style="text-align:center">2</td><td style="text-align:center">3</td><td style="text-align:center"><b>149</b></td></tr></tbody></table></div>
 </section>
 
 <footer>
